@@ -48,7 +48,7 @@
       "flow.head": "workflow · new lead",
       "flow.n1": "Web form",
       "flow.n2": "AI qualification",
-      "flow.foot": "✓ Executed in 1.2s — zero manual work",
+      "flow.foot": "✓ Lead handled automatically — no manual data entry",
 
       "services.title": "What I can do for you",
       "services.sub": "Tailor-made digital solutions to automate, grow and simplify your business.",
@@ -170,7 +170,7 @@
       "flow.head": "workflow · عميل جديد",
       "flow.n1": "نموذج الموقع",
       "flow.n2": "تأهيل بالذكاء الاصطناعي",
-      "flow.foot": "✓ نُفِّذ في 1.2 ثانية — بدون أي تدخل يدوي",
+      "flow.foot": "✓ معالجة العميل تلقائيًا — بدون أي إدخال يدوي",
 
       "services.title": "ما الذي يمكنني فعله لك",
       "services.sub": "حلول رقمية مصممة خصيصًا لأتمتة نشاطك وتطويره وتبسيطه.",
@@ -314,7 +314,11 @@
     document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
   }
 
+  // Les robots (Google, Bing, aperçus LinkedIn…) voient toujours la version française de référence.
+  const isBot = /bot|crawl|spider|slurp|lighthouse|facebookexternalhit|linkedin|embedly|preview/i.test(navigator.userAgent);
+
   async function detect() {
+    if (isBot) return "fr";
     const browser = (navigator.languages || [navigator.language || ""]).map((l) => l.slice(0, 2).toLowerCase());
     // Une préférence explicite du navigateur pour l'arabe ou le français l'emporte.
     if (browser[0] === "ar" || browser[0] === "fr") return browser[0];
