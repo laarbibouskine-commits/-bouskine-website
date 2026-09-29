@@ -28,6 +28,7 @@
     </button>
     <nav class="links">
       <a href="#services">Services</a>
+      <a href="#projets">Réalisations</a>
       <a href="#automations">Exemples</a>
       <a href="#process">Méthode</a>
       <a href="#about">À propos</a>
@@ -114,6 +115,54 @@
           <h3>Des idées aux résultats</h3>
           <p>Audit de vos process, conseil et accompagnement : on identifie ensemble ce qui peut être automatisé et on le met en place.</p>
           <ul><li>Audit gratuit</li><li>Conseil & stratégie</li><li>Formation & support</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Réalisations</p>
+        <h2>Des workflows n8n en production</h2>
+        <p>Quelques automatisations que j'ai conçues et qui tournent tous les jours.</p>
+      </div>
+      <div class="projects">
+        <article class="project reveal">
+          <div class="project-media">
+            <video src="assets/projects/social-auto-posts.mp4" poster="assets/projects/social-auto-posts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du workflow n8n de publication automatique en cours d'exécution"></video>
+          </div>
+          <div class="project-body">
+            <span class="tag">Marketing & Réseaux sociaux</span>
+            <h3>Publication automatique Facebook & Instagram</h3>
+            <p>Chaque jour à heure fixe, le workflow choisit une audience cible, analyse les hashtags tendance sur Instagram, génère une image avec l'IA, rédige le post, puis publie automatiquement sur la page Facebook et le compte Instagram — et envoie une notification WhatsApp une fois terminé.</p>
+            <ul class="stack"><li>n8n</li><li>Apify</li><li>Cloudflare AI</li><li>Cloudinary</li><li>OpenRouter</li><li>Facebook</li><li>Instagram</li><li>WhatsApp</li></ul>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="project-media canvas" role="img" aria-label="Schéma du workflow : un agent manager coordonne 7 agents IA, puis l'article est rédigé, illustré, publié sur WordPress et optimisé avec Rank Math">
+            <div class="pipeline">
+              <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small>Agent IA</small></div>
+              <div class="pwire"></div>
+              <div class="pnode"><i>✍️</i><span>Article Writer</span><small>Rédaction</small></div>
+              <div class="pwire"></div>
+              <div class="pnode"><i>🖼️</i><span>Image à la une</span><small>Génération IA</small></div>
+              <div class="pwire"></div>
+              <div class="pnode"><i>📰</i><span>WordPress</span><small>Publication</small></div>
+              <div class="pwire"></div>
+              <div class="pnode"><i>📈</i><span>Rank Math</span><small>SEO</small></div>
+            </div>
+            <div class="agents">
+              <span>🔎 Keywords</span><span>🕵️ Concurrents</span><span>🌐 Perplexity</span><span>🏷️ Titres</span><span>📝 Descriptions</span><span>🔗 Liens internes</span><span>🎨 Gemini</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="tag">Automatisation & IA</span>
+            <h3>Agent IA de blogging SEO pour WordPress</h3>
+            <p>Une équipe d'agents IA qui recherche les mots-clés, analyse les articles concurrents, rédige l'article, crée l'image à la une, ajoute les liens internes, puis publie sur WordPress avec le SEO Rank Math optimisé.</p>
+            <ul class="stack"><li>n8n</li><li>Agents IA</li><li>Perplexity</li><li>Gemini</li><li>WordPress</li><li>Rank Math</li></ul>
+          </div>
         </article>
       </div>
     </div>

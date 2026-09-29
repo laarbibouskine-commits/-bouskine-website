@@ -1,7 +1,7 @@
 // ===== Configuration =====
 // Numéro WhatsApp au format international sans "+" ni espaces (ex : "212600000000").
 // Laisser vide pour masquer le bouton WhatsApp.
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "212687184542";
 // URL d'un webhook n8n qui reçoit les messages du formulaire (POST JSON).
 // Laisser vide pour ouvrir l'application email du visiteur à la place.
 const N8N_WEBHOOK_URL = "";
