@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "bouskine.com" }],
+      "destination": "https://www.bouskine.com/$1",
+      "permanent": true
+    }
+  ]
+}
