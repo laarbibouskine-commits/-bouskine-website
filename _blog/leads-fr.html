@@ -1,0 +1,60 @@
+<!--ID:leads-->
+<!--LANG:fr-->
+<!--SLUG:generation-leads-b2b-google-maps-n8n-->
+<!--TITLE:Générer des leads B2B automatiquement avec n8n et Google Maps-->
+<!--DESC:Un workflow n8n qui trouve des entreprises sur Google Maps, les qualifie, élimine les doublons et prépare un message de prospection personnalisé avec l'IA.-->
+<!--TAG:Prospection & Leads-->
+<!--DATE:2026-09-29-->
+
+<p>La prospection B2B commence souvent de la même façon : chercher des entreprises sur Google Maps, copier leurs informations dans un tableau, vérifier qu'elles n'ont pas déjà été contactées, puis écrire un message à chacune. C'est utile, mais très répétitif.</p>
+<p>Voici le workflow <strong>n8n</strong> que j'ai construit pour automatiser cette prospection : chaque lundi matin, il produit une liste de nouveaux prospects qualifiés, avec un message personnalisé prêt pour chacun.</p>
+
+<figure>
+  <video src="/assets/projects/leads-agences.mp4" poster="/assets/projects/leads-agences.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du workflow de génération de leads en cours d'exécution"></video>
+  <figcaption>Le workflow de génération de leads dans n8n.</figcaption>
+</figure>
+
+<h2>Le problème : une prospection manuelle et désorganisée</h2>
+<ul>
+  <li>Des heures passées à chercher et copier des coordonnées.</li>
+  <li>Des doublons : la même entreprise contactée deux fois.</li>
+  <li>Des messages génériques, faute de temps pour les personnaliser.</li>
+  <li>Des informations dispersées entre plusieurs fichiers.</li>
+</ul>
+
+<h2>La solution en un coup d'œil</h2>
+<div class="flow-line"><span>Chaque lundi</span><b>→</b><span>Villes ciblées</span><b>→</b><span>Google Maps</span><b>→</b><span>Qualification</span><b>→</b><span>Anti-doublons</span><b>→</b><span>Message IA</span><b>→</b><span>Base de données</span><b>→</b><span>Résumé email</span></div>
+
+<h2>Le workflow étape par étape</h2>
+<h3>1. Deux déclencheurs</h3>
+<p>Un <em>Schedule Trigger</em> lance la recherche chaque lundi à 9 h. Un déclencheur manuel permet aussi de la lancer à tout moment.</p>
+<h3>2. La liste des villes à cibler</h3>
+<p>Un nœud <em>Code</em> contient les villes et le type d'entreprise recherché. Le workflow crée une recherche par ville.</p>
+<h3>3. La recherche sur Google Maps</h3>
+<p>Le workflow interroge Google Maps via <strong>SerpApi</strong>. Une branche alternative avec <strong>Apify</strong> est prête si l'on veut changer de fournisseur. Les résultats de chaque source sont normalisés dans un format commun, puis fusionnés.</p>
+<h3>4. La qualification</h3>
+<p>Un nœud <em>Code</em> garde uniquement les entreprises qui correspondent aux critères : catégorie, présence d'un site web ou d'un téléphone, note, etc. Les critères s'adaptent à chaque client.</p>
+<h3>5. L'élimination des doublons</h3>
+<p>Le workflow récupère les leads déjà enregistrés dans <strong>Supabase</strong> et écarte ceux qui existent déjà. Il garde ensuite les 30 meilleurs nouveaux leads de la semaine.</p>
+<h3>6. Le message personnalisé avec l'IA</h3>
+<p>Pour chaque lead, un modèle <strong>Gemini</strong> rédige un premier message de prise de contact adapté à l'entreprise (activité, ville, site web).</p>
+<h3>7. L'enregistrement et le résumé</h3>
+<p>Les nouveaux leads et leurs messages sont enregistrés dans Supabase. Un résumé de la semaine est ensuite envoyé par <strong>Gmail</strong>. Une branche WhatsApp peut aussi envoyer ce résumé.</p>
+
+<h2>Les outils utilisés</h2>
+<ul class="tools"><li>n8n</li><li>SerpApi</li><li>Google Maps</li><li>Apify</li><li>Gemini</li><li>Supabase</li><li>Gmail</li></ul>
+
+<h2>Les points d'attention</h2>
+<ul>
+  <li><strong>Respect des règles de prospection :</strong> on utilise uniquement des données professionnelles publiques, et l'envoi des messages doit respecter la réglementation applicable (RGPD en Europe, loi 09-08 au Maroc), avec une possibilité simple de se désinscrire.</li>
+  <li><strong>Validation humaine :</strong> les messages générés sont des brouillons. Je recommande de les relire avant l'envoi, au moins au début.</li>
+  <li><strong>Coûts des API :</strong> SerpApi, Apify et les modèles d'IA ont leurs propres tarifs. Le volume hebdomadaire se règle facilement pour maîtriser le budget.</li>
+</ul>
+
+<h2>Ce que ce workflow apporte</h2>
+<ul>
+  <li>Une nouvelle liste de prospects qualifiés chaque semaine, sans recherche manuelle.</li>
+  <li>Aucun doublon : chaque entreprise n'apparaît qu'une fois.</li>
+  <li>Des leads centralisés dans une base de données, avec un message prêt pour chacun.</li>
+</ul>
+<p>Ce workflow s'adapte à de nombreux secteurs : agences, immobilier, artisans, services B2B… Il suffit de changer le type d'entreprise, les villes et les critères de qualification.</p>

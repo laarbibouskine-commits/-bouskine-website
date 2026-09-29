@@ -1,0 +1,68 @@
+<!--ID:seo-->
+<!--LANG:en-->
+<!--SLUG:ai-agent-seo-articles-wordpress-n8n-->
+<!--TITLE:Build an AI Agent That Writes and Publishes SEO Articles on WordPress with n8n-->
+<!--DESC:The architecture of a multi-agent system in n8n: keyword research, competitor analysis, writing, images, internal links and WordPress publishing with Rank Math.-->
+<!--TAG:Automation & AI-->
+<!--DATE:2026-09-29-->
+
+<p>A good SEO article takes many steps: researching keywords, analyzing what competitors publish, finding a title, writing the content, creating an image, adding internal links, then filling in the SEO fields before publishing. It takes time, and that's often why a company blog stops after a few posts.</p>
+<p>I built a system of <strong>AI agents</strong> in <strong>n8n</strong> that handles this entire chain, from the topic to the article published on WordPress.</p>
+
+<div class="project-media canvas" role="img" aria-label="Diagram: a manager agent coordinates 7 AI agents, then the article is written, illustrated, published on WordPress and optimized with Rank Math">
+  <div class="pipeline">
+    <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small>AI agent</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>✍️</i><span>Article Writer</span><small>Writing</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>🖼️</i><span>Featured image</span><small>AI generation</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>📰</i><span>WordPress</span><small>Publishing</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>📈</i><span>Rank Math</span><small>SEO</small></div>
+  </div>
+  <div class="agents"><span>🔎 Keywords</span><span>🕵️ Competitors</span><span>🌐 Perplexity</span><span>🏷️ Titles</span><span>📝 Descriptions</span><span>🔗 Internal links</span><span>🎨 Gemini</span></div>
+</div>
+
+<h2>Why several agents instead of one?</h2>
+<p>You could ask a single AI model to write the whole article. In practice, though, an agent that has to do everything produces less precise results. By splitting the work, each agent has a clear mission and short instructions:</p>
+<ul>
+  <li>results are more reliable;</li>
+  <li>each step can be tested and improved separately;</li>
+  <li>you can switch the model for one task without touching the rest.</li>
+</ul>
+
+<h2>The system architecture</h2>
+<h3>1. The "Blog Manager", the orchestrator agent</h3>
+<p>It's an AI agent (n8n's <em>AI Agent</em> node) that receives the article topic. It doesn't write anything itself: it calls the other agents, which are connected to it as tools, and gathers their answers in a structured format.</p>
+<h3>2. The specialized agents</h3>
+<ul>
+  <li><strong>Keyword research:</strong> identifies the main keyword and related terms.</li>
+  <li><strong>Competitor analysis:</strong> uses <strong>Perplexity</strong> to study the articles already ranking on the topic.</li>
+  <li><strong>Title generator</strong> and <strong>meta description generator</strong>.</li>
+  <li><strong>Internal links:</strong> looks at the articles already published on the WordPress site to suggest relevant links.</li>
+  <li><strong>Image agent:</strong> prepares the featured image with <strong>Gemini</strong>, along with its optimized alt text, caption and file name.</li>
+</ul>
+<h3>3. The "Article Writer"</h3>
+<p>A second agent writes the full article from everything the Blog Manager gathered. It returns a structured result: title, content, excerpt and slug.</p>
+<h3>4. Publishing on WordPress</h3>
+<p>The workflow generates the image, uploads it to the WordPress media library via the REST API, creates the post with the featured image, then fills in the <strong>Rank Math</strong> fields: SEO title, meta description and focus keyword.</p>
+
+<h2>Tools used</h2>
+<ul class="tools"><li>n8n</li><li>AI Agents (LangChain)</li><li>OpenRouter</li><li>Perplexity</li><li>Gemini</li><li>WordPress REST API</li><li>Rank Math</li></ul>
+
+<h2>Things to watch out for</h2>
+<ul>
+  <li><strong>Quality over quantity:</strong> Google penalizes mass-produced content with no added value. This system is meant to produce good articles faster, not to flood a site with pages.</li>
+  <li><strong>Human review:</strong> I recommend publishing as a <em>draft</em> first, checking facts and adjusting the tone before going live.</li>
+  <li><strong>Rank Math and the API:</strong> Rank Math's SEO fields must be exposed to the WordPress REST API (with a small code snippet or a plugin).</li>
+  <li><strong>Costs:</strong> each article calls several AI models. Your choice of models lets you adjust the cost per article.</li>
+</ul>
+
+<h2>What this system brings</h2>
+<ul>
+  <li>A complete, repeatable writing process, from research to publishing.</li>
+  <li>Articles that are already SEO-optimized, with an image, internal links and Rank Math fields filled in.</li>
+  <li>More time for editing and content strategy.</li>
+</ul>
+<p>This system suits businesses and agencies that want to publish regularly on their WordPress blog without spending entire days on it.</p>

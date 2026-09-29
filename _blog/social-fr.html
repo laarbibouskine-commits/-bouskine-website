@@ -1,0 +1,67 @@
+<!--ID:social-->
+<!--LANG:fr-->
+<!--SLUG:automatiser-publication-facebook-instagram-n8n-->
+<!--TITLE:Automatiser la publication Facebook & Instagram avec n8n et l'IA-->
+<!--DESC:Comment j'ai construit un workflow n8n qui choisit une audience, génère une image avec l'IA, rédige le post et le publie chaque jour sur Facebook et Instagram.-->
+<!--TAG:Marketing & Réseaux sociaux-->
+<!--DATE:2026-09-29-->
+
+<p>Publier tous les jours sur Facebook et Instagram demande du temps : trouver une idée, créer un visuel, écrire la légende, choisir les hashtags, puis publier sur deux plateformes. Au bout de quelques semaines, la régularité baisse presque toujours.</p>
+<p>Dans cet article, je vous montre le workflow <strong>n8n</strong> que j'ai construit pour automatiser entièrement cette tâche : chaque jour, à heure fixe, il prépare un post complet avec l'IA et le publie sur les deux réseaux, puis envoie une notification sur WhatsApp.</p>
+
+<figure>
+  <video src="/assets/projects/social-auto-posts.mp4" poster="/assets/projects/social-auto-posts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du workflow n8n en cours d'exécution"></video>
+  <figcaption>Le workflow en cours d'exécution dans n8n.</figcaption>
+</figure>
+
+<h2>Le problème : une tâche simple mais chronophage</h2>
+<p>Pour une entreprise, une agence ou un créateur, la publication sur les réseaux sociaux se répète chaque jour avec les mêmes étapes :</p>
+<ul>
+  <li>trouver un sujet adapté à l'audience ;</li>
+  <li>créer une image ;</li>
+  <li>rédiger un texte et sélectionner des hashtags pertinents ;</li>
+  <li>publier sur Facebook, puis sur Instagram ;</li>
+  <li>vérifier que tout est bien en ligne.</li>
+</ul>
+<p>Chacune de ces étapes peut être confiée à un workflow.</p>
+
+<h2>La solution en un coup d'œil</h2>
+<div class="flow-line"><span>Planification</span><b>→</b><span>Audience</span><b>→</b><span>Hashtags</span><b>→</b><span>Image IA</span><b>→</b><span>Texte IA</span><b>→</b><span>Facebook + Instagram</span><b>→</b><span>WhatsApp</span></div>
+
+<h2>Le workflow étape par étape</h2>
+<h3>1. Un déclencheur planifié</h3>
+<p>Un nœud <em>Schedule Trigger</em> lance le workflow chaque jour à la même heure. C'est ce qui garantit la régularité.</p>
+<h3>2. Le choix de l'audience</h3>
+<p>Un nœud <em>Code</em> sélectionne le segment d'audience du jour (par exemple familles, couples, voyageurs d'affaires). En changeant de segment d'un jour à l'autre, on évite des publications répétitives.</p>
+<h3>3. La recherche de hashtags</h3>
+<p>Le workflow utilise <strong>Apify</strong> pour analyser des hashtags Instagram liés au thème, puis un nœud <em>Code</em> extrait les plus pertinents.</p>
+<h3>4. La génération de l'image</h3>
+<p>Un modèle d'image de <strong>Cloudflare Workers AI</strong> crée un visuel original à partir d'une description. L'image est ensuite décodée puis envoyée sur <strong>Cloudinary</strong>.</p>
+<p>Pourquoi Cloudinary ? Parce que l'API d'Instagram exige une <strong>URL publique</strong> pour l'image : elle ne peut pas recevoir directement un fichier.</p>
+<h3>5. La rédaction du post</h3>
+<p>Un modèle de langage (via <strong>OpenRouter</strong>) rédige la légende en tenant compte de l'audience et des hashtags. La réponse est demandée dans un format structuré, puis analysée par un nœud <em>Code</em>, ce qui évite les surprises au moment de publier.</p>
+<h3>6. La publication sur Facebook</h3>
+<p>Le workflow récupère le jeton de la page, puis publie l'image et le texte via l'API Graph de Meta.</p>
+<h3>7. La publication sur Instagram</h3>
+<p>Sur Instagram, la publication se fait en trois temps : création d'un « conteneur » média, attente du traitement de l'image, puis publication. Le workflow récupère enfin le lien du post publié.</p>
+<h3>8. La notification WhatsApp</h3>
+<p>Un nœud <em>Merge</em> attend que les deux publications soient terminées, puis une notification est envoyée sur WhatsApp avec le résultat.</p>
+
+<h2>Les outils utilisés</h2>
+<ul class="tools"><li>n8n</li><li>Apify</li><li>Cloudflare Workers AI</li><li>Cloudinary</li><li>OpenRouter</li><li>Meta Graph API</li><li>WhatsApp</li></ul>
+
+<h2>Les points d'attention</h2>
+<ul>
+  <li><strong>Compte Instagram professionnel :</strong> l'API de publication fonctionne avec un compte Business ou Créateur relié à une page Facebook.</li>
+  <li><strong>Jetons d'accès :</strong> il faut utiliser des jetons longue durée et prévoir leur renouvellement.</li>
+  <li><strong>Limites de Meta :</strong> Instagram limite le nombre de publications via API sur 24 heures. Un post par jour reste largement dans ces limites.</li>
+  <li><strong>Contrôle qualité :</strong> selon la marque, on peut ajouter une étape de validation humaine (par exemple un message WhatsApp ou email avec « valider / refuser ») avant la publication.</li>
+</ul>
+
+<h2>Ce que ce workflow apporte</h2>
+<ul>
+  <li>Une publication régulière, même les jours chargés.</li>
+  <li>Des visuels et des textes cohérents avec l'audience ciblée.</li>
+  <li>Plus aucune tâche manuelle de publication : on reçoit simplement la confirmation sur WhatsApp.</li>
+</ul>
+<p>Ce type de workflow convient aux commerces, aux agences qui gèrent plusieurs pages et à toutes les entreprises qui veulent rester visibles sans y consacrer du temps chaque jour.</p>

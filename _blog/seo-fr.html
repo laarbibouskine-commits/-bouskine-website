@@ -1,0 +1,68 @@
+<!--ID:seo-->
+<!--LANG:fr-->
+<!--SLUG:agent-ia-articles-seo-wordpress-n8n-->
+<!--TITLE:Créer un agent IA qui rédige et publie des articles SEO sur WordPress avec n8n-->
+<!--DESC:Architecture d'un système multi-agents dans n8n : recherche de mots-clés, analyse des concurrents, rédaction, image, liens internes et publication WordPress avec Rank Math.-->
+<!--TAG:Automatisation & IA-->
+<!--DATE:2026-09-29-->
+
+<p>Un bon article SEO demande beaucoup d'étapes : rechercher les mots-clés, analyser ce que publient les concurrents, trouver un titre, écrire le contenu, créer une image, ajouter des liens internes, puis remplir les champs SEO avant de publier. C'est long, et c'est souvent pour cela qu'un blog d'entreprise s'arrête après quelques articles.</p>
+<p>J'ai construit dans <strong>n8n</strong> un système d'<strong>agents IA</strong> qui prend en charge toute cette chaîne, du sujet jusqu'à l'article publié sur WordPress.</p>
+
+<div class="project-media canvas" role="img" aria-label="Schéma : un agent manager coordonne 7 agents IA, puis l'article est rédigé, illustré, publié sur WordPress et optimisé avec Rank Math">
+  <div class="pipeline">
+    <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small>Agent IA</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>✍️</i><span>Article Writer</span><small>Rédaction</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>🖼️</i><span>Image à la une</span><small>Génération IA</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>📰</i><span>WordPress</span><small>Publication</small></div>
+    <div class="pwire"></div>
+    <div class="pnode"><i>📈</i><span>Rank Math</span><small>SEO</small></div>
+  </div>
+  <div class="agents"><span>🔎 Mots-clés</span><span>🕵️ Concurrents</span><span>🌐 Perplexity</span><span>🏷️ Titres</span><span>📝 Descriptions</span><span>🔗 Liens internes</span><span>🎨 Gemini</span></div>
+</div>
+
+<h2>Pourquoi plusieurs agents plutôt qu'un seul ?</h2>
+<p>On pourrait demander à un seul modèle d'IA d'écrire tout l'article. Mais en pratique, un agent qui doit tout faire produit un résultat moins précis. En découpant le travail, chaque agent a une mission claire et des instructions courtes :</p>
+<ul>
+  <li>les résultats sont plus fiables ;</li>
+  <li>chaque étape peut être testée et améliorée séparément ;</li>
+  <li>on peut changer de modèle pour une seule tâche sans toucher au reste.</li>
+</ul>
+
+<h2>L'architecture du système</h2>
+<h3>1. Le « Blog Manager », l'agent chef d'orchestre</h3>
+<p>C'est un agent IA (nœud <em>AI Agent</em> de n8n) qui reçoit le sujet de l'article. Il ne rédige pas lui-même : il appelle les autres agents, qui sont branchés sur lui comme des outils, et rassemble leurs réponses dans un format structuré.</p>
+<h3>2. Les agents spécialisés</h3>
+<ul>
+  <li><strong>Recherche de mots-clés :</strong> identifie le mot-clé principal et les termes associés.</li>
+  <li><strong>Analyse des concurrents :</strong> s'appuie sur <strong>Perplexity</strong> pour étudier les articles qui se positionnent déjà sur le sujet.</li>
+  <li><strong>Générateur de titres</strong> et <strong>générateur de méta-descriptions</strong>.</li>
+  <li><strong>Liens internes :</strong> consulte les articles déjà publiés sur le site WordPress pour proposer des liens pertinents.</li>
+  <li><strong>Agent image :</strong> prépare l'image à la une avec <strong>Gemini</strong>, ainsi que son texte alternatif, sa légende et son nom de fichier optimisés.</li>
+</ul>
+<h3>3. L'« Article Writer »</h3>
+<p>Un second agent rédige l'article complet à partir de tout ce que le Blog Manager a rassemblé. Il renvoie un résultat structuré : titre, contenu, extrait et slug.</p>
+<h3>4. La publication sur WordPress</h3>
+<p>Le workflow génère l'image, l'envoie dans la médiathèque WordPress via l'API REST, crée l'article avec l'image à la une, puis remplit les champs <strong>Rank Math</strong> : titre SEO, méta-description et mot-clé principal.</p>
+
+<h2>Les outils utilisés</h2>
+<ul class="tools"><li>n8n</li><li>Agents IA (LangChain)</li><li>OpenRouter</li><li>Perplexity</li><li>Gemini</li><li>WordPress REST API</li><li>Rank Math</li></ul>
+
+<h2>Les points d'attention</h2>
+<ul>
+  <li><strong>La qualité avant la quantité :</strong> Google pénalise les contenus produits en masse sans valeur ajoutée. Ce système sert à produire de bons articles plus vite, pas à inonder un site de pages.</li>
+  <li><strong>Relecture humaine :</strong> je recommande de publier d'abord en <em>brouillon</em>, de vérifier les faits et d'ajuster le ton avant la mise en ligne.</li>
+  <li><strong>Rank Math et l'API :</strong> les champs SEO de Rank Math doivent être rendus accessibles à l'API REST de WordPress (via un petit extrait de code ou une extension).</li>
+  <li><strong>Coûts :</strong> chaque article appelle plusieurs modèles d'IA. Le choix des modèles permet d'ajuster le coût par article.</li>
+</ul>
+
+<h2>Ce que ce système apporte</h2>
+<ul>
+  <li>Un processus de rédaction complet et reproductible, de la recherche à la publication.</li>
+  <li>Des articles déjà optimisés pour le SEO, avec image, liens internes et champs Rank Math remplis.</li>
+  <li>Du temps libéré pour la relecture et la stratégie de contenu.</li>
+</ul>
+<p>Ce système convient aux entreprises et aux agences qui veulent publier régulièrement sur leur blog WordPress sans y passer des journées entières.</p>

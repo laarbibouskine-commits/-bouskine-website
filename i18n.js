@@ -140,6 +140,18 @@
       "footer.privacyShort": "Privacy",
       "footer.termsShort": "Terms",
 
+      "nav.blog": "Blog",
+      "blog.title": "Guides & tutorials",
+      "blog.sub": "How I build my n8n and AI automations, step by step.",
+      "blog.all": "All articles →",
+      "blog.read": "Read the article →",
+      "b1.t": "Automate Facebook & Instagram posting with n8n and AI",
+      "b1.p": "A workflow that creates the image, writes the post and publishes it every day on both platforms.",
+      "b2.t": "Generate B2B leads automatically with n8n and Google Maps",
+      "b2.p": "Find businesses, qualify them, remove duplicates and prepare a personalized message for each one.",
+      "b3.t": "Build an AI agent that writes and publishes SEO articles on WordPress",
+      "b3.p": "A team of AI agents coordinated by n8n, from keyword research to publishing with Rank Math.",
+
       "wa.aria": "Chat on WhatsApp",
       "wa.msg": "Hello, I'm reaching out from your Bouskine Digital Solutions website.",
     },
@@ -262,6 +274,18 @@
       "footer.privacyShort": "الخصوصية",
       "footer.termsShort": "الشروط",
 
+      "nav.blog": "المدونة",
+      "blog.title": "أدلة ودروس عملية",
+      "blog.sub": "كيف أبني أتمتة n8n والذكاء الاصطناعي، خطوة بخطوة.",
+      "blog.all": "كل المقالات ←",
+      "blog.read": "اقرأ المقال ←",
+      "b1.t": "أتمتة النشر على فيسبوك وإنستغرام باستخدام n8n والذكاء الاصطناعي",
+      "b1.p": "سير عمل يُنشئ الصورة ويكتب المنشور وينشره يوميًا على المنصتين.",
+      "b2.t": "جلب عملاء B2B تلقائيًا باستخدام n8n وخرائط Google",
+      "b2.p": "البحث عن الشركات وتأهيلها وحذف المكرر وتحضير رسالة مخصصة لكل منها.",
+      "b3.t": "بناء وكيل ذكاء اصطناعي يكتب مقالات SEO وينشرها على ووردبريس",
+      "b3.p": "فريق من وكلاء الذكاء الاصطناعي ينسقه n8n، من البحث عن الكلمات المفتاحية إلى النشر مع Rank Math.",
+
       "wa.aria": "تواصل عبر واتساب",
       "wa.msg": "مرحبًا، أتواصل معكم من موقع Bouskine Digital Solutions.",
     },
@@ -303,6 +327,11 @@
 
     const text = encodeURIComponent(window.t("wa.msg"));
     document.querySelectorAll(".wa-link").forEach((a) => { a.href = `https://wa.me/${WA_NUMBER}?text=${text}`; });
+    // Liens qui pointent vers une URL différente selon la langue (ex. blog : /blog, /en/blog, /ar/blog)
+    document.querySelectorAll("[data-href-fr]").forEach((a) => { a.href = a.dataset[`href${lang[0].toUpperCase()}${lang[1]}`] || a.dataset.hrefFr; });
+
+    // Les pages à langue fixe (blog) ont déjà le bon titre et la bonne description dans le HTML.
+    if (FIXED) { document.dispatchEvent(new CustomEvent("langchange", { detail: lang })); return; }
 
     const titleEl = document.querySelector("title");
     const descEl = document.querySelector('meta[name="description"]');
@@ -335,15 +364,36 @@
     return SUPPORTED.find((l) => browser.includes(l)) || "en";
   }
 
-  // Applique tôt la langue mémorisée pour éviter un flash de mauvaise direction.
+  // Pages à langue fixe (articles et index du blog) : chaque langue a sa propre URL.
+  const FIXED = document.documentElement.dataset.fixedLang || null;
+  // Lu au clic : les <link hreflang> sont placés après ce script dans le <head>.
+  const alternateFor = (lang) => {
+    const link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+    return link ? new URL(link.href).pathname : null;
+  };
   const saved = readSaved();
-  if (saved === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; }
+
+  if (FIXED) {
+    // Arrivé directement sur un article dans une langue : on retient cette langue pour le reste du site.
+    // (Pas de redirection automatique : un lien partagé doit toujours ouvrir la langue demandée.)
+    if (!saved && !isBot) save(FIXED);
+  } else if (saved === "ar") {
+    // Applique tôt la langue mémorisée pour éviter un flash de mauvaise direction.
+    document.documentElement.lang = "ar"; document.documentElement.dir = "rtl";
+  }
 
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-lang-btn]").forEach((b) =>
-      b.addEventListener("click", () => { save(b.dataset.langBtn); apply(b.dataset.langBtn); })
+      b.addEventListener("click", () => {
+        const l = b.dataset.langBtn;
+        save(l);
+        const target = FIXED && l !== FIXED ? alternateFor(l) : null;
+        if (target) location.href = target;
+        else apply(l);
+      })
     );
-    if (SUPPORTED.includes(saved)) apply(saved);
+    if (FIXED) apply(FIXED);
+    else if (SUPPORTED.includes(saved)) apply(saved);
     else {
       apply("fr");
       detect().then((l) => { if (l !== current && !readSaved()) apply(l); });

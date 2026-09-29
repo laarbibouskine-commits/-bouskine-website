@@ -1,0 +1,67 @@
+<!--ID:social-->
+<!--LANG:en-->
+<!--SLUG:automate-facebook-instagram-posting-n8n-->
+<!--TITLE:Automate Facebook & Instagram Posting with n8n and AI-->
+<!--DESC:How I built an n8n workflow that picks an audience, generates an image with AI, writes the post and publishes it every day on Facebook and Instagram.-->
+<!--TAG:Marketing & Social Media-->
+<!--DATE:2026-09-29-->
+
+<p>Posting every day on Facebook and Instagram takes time: finding an idea, creating a visual, writing the caption, choosing hashtags, then publishing on two platforms. After a few weeks, consistency almost always drops.</p>
+<p>In this article, I'll show you the <strong>n8n</strong> workflow I built to fully automate this task: every day at a set time, it prepares a complete post with AI, publishes it on both networks, then sends a WhatsApp notification.</p>
+
+<figure>
+  <video src="/assets/projects/social-auto-posts.mp4" poster="/assets/projects/social-auto-posts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the n8n workflow running"></video>
+  <figcaption>The workflow running in n8n.</figcaption>
+</figure>
+
+<h2>The problem: a simple but time-consuming task</h2>
+<p>For a business, an agency or a creator, social media publishing repeats every day with the same steps:</p>
+<ul>
+  <li>finding a topic that fits the audience;</li>
+  <li>creating an image;</li>
+  <li>writing a caption and choosing relevant hashtags;</li>
+  <li>publishing on Facebook, then on Instagram;</li>
+  <li>checking that everything went live.</li>
+</ul>
+<p>Each of these steps can be handed over to a workflow.</p>
+
+<h2>The solution at a glance</h2>
+<div class="flow-line"><span>Schedule</span><b>→</b><span>Audience</span><b>→</b><span>Hashtags</span><b>→</b><span>AI image</span><b>→</b><span>AI caption</span><b>→</b><span>Facebook + Instagram</span><b>→</b><span>WhatsApp</span></div>
+
+<h2>The workflow step by step</h2>
+<h3>1. A scheduled trigger</h3>
+<p>A <em>Schedule Trigger</em> node starts the workflow every day at the same time. That is what guarantees consistency.</p>
+<h3>2. Choosing the audience</h3>
+<p>A <em>Code</em> node selects the audience segment of the day (for example families, couples, business travelers). Rotating segments avoids repetitive posts.</p>
+<h3>3. Hashtag research</h3>
+<p>The workflow uses <strong>Apify</strong> to analyze Instagram hashtags related to the topic, then a <em>Code</em> node extracts the most relevant ones.</p>
+<h3>4. Generating the image</h3>
+<p>An image model from <strong>Cloudflare Workers AI</strong> creates an original visual from a description. The image is then decoded and uploaded to <strong>Cloudinary</strong>.</p>
+<p>Why Cloudinary? Because the Instagram API requires a <strong>public URL</strong> for the image: it cannot receive a file directly.</p>
+<h3>5. Writing the post</h3>
+<p>A language model (through <strong>OpenRouter</strong>) writes the caption based on the audience and hashtags. The answer is requested in a structured format and parsed by a <em>Code</em> node, which avoids surprises at publishing time.</p>
+<h3>6. Publishing on Facebook</h3>
+<p>The workflow retrieves the page token, then publishes the image and text through Meta's Graph API.</p>
+<h3>7. Publishing on Instagram</h3>
+<p>On Instagram, publishing happens in three steps: creating a media "container", waiting for the image to be processed, then publishing. Finally, the workflow retrieves the link to the published post.</p>
+<h3>8. WhatsApp notification</h3>
+<p>A <em>Merge</em> node waits for both posts to be done, then a WhatsApp notification is sent with the result.</p>
+
+<h2>Tools used</h2>
+<ul class="tools"><li>n8n</li><li>Apify</li><li>Cloudflare Workers AI</li><li>Cloudinary</li><li>OpenRouter</li><li>Meta Graph API</li><li>WhatsApp</li></ul>
+
+<h2>Things to watch out for</h2>
+<ul>
+  <li><strong>Professional Instagram account:</strong> the publishing API works with a Business or Creator account linked to a Facebook Page.</li>
+  <li><strong>Access tokens:</strong> use long-lived tokens and plan for their renewal.</li>
+  <li><strong>Meta limits:</strong> Instagram limits the number of API-published posts per 24 hours. One post a day stays well within those limits.</li>
+  <li><strong>Quality control:</strong> depending on the brand, you can add a human approval step (for example a WhatsApp or email message with "approve / reject") before publishing.</li>
+</ul>
+
+<h2>What this workflow brings</h2>
+<ul>
+  <li>Consistent posting, even on busy days.</li>
+  <li>Visuals and captions aligned with the target audience.</li>
+  <li>No more manual publishing: you simply receive the confirmation on WhatsApp.</li>
+</ul>
+<p>This type of workflow suits local businesses, agencies managing several pages, and any company that wants to stay visible without spending time on it every day.</p>

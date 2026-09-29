@@ -1,0 +1,60 @@
+<!--ID:leads-->
+<!--LANG:en-->
+<!--SLUG:b2b-lead-generation-google-maps-n8n-->
+<!--TITLE:Generate B2B Leads Automatically with n8n and Google Maps-->
+<!--DESC:An n8n workflow that finds businesses on Google Maps, qualifies them, removes duplicates and prepares a personalized outreach message with AI.-->
+<!--TAG:Prospecting & Leads-->
+<!--DATE:2026-09-29-->
+
+<p>B2B prospecting often starts the same way: searching for businesses on Google Maps, copying their details into a spreadsheet, checking they haven't been contacted already, then writing a message to each one. It's useful, but very repetitive.</p>
+<p>Here is the <strong>n8n</strong> workflow I built to automate this prospecting: every Monday morning, it produces a list of new qualified prospects, each with a personalized message ready to go.</p>
+
+<figure>
+  <video src="/assets/projects/leads-agences.mp4" poster="/assets/projects/leads-agences.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of the lead generation workflow running"></video>
+  <figcaption>The lead generation workflow in n8n.</figcaption>
+</figure>
+
+<h2>The problem: manual, disorganized prospecting</h2>
+<ul>
+  <li>Hours spent searching for and copying contact details.</li>
+  <li>Duplicates: the same business contacted twice.</li>
+  <li>Generic messages, because there's no time to personalize them.</li>
+  <li>Information scattered across several files.</li>
+</ul>
+
+<h2>The solution at a glance</h2>
+<div class="flow-line"><span>Every Monday</span><b>→</b><span>Target cities</span><b>→</b><span>Google Maps</span><b>→</b><span>Qualification</span><b>→</b><span>De-duplication</span><b>→</b><span>AI message</span><b>→</b><span>Database</span><b>→</b><span>Email summary</span></div>
+
+<h2>The workflow step by step</h2>
+<h3>1. Two triggers</h3>
+<p>A <em>Schedule Trigger</em> runs the search every Monday at 9 am. A manual trigger also lets you run it at any time.</p>
+<h3>2. The list of target cities</h3>
+<p>A <em>Code</em> node holds the cities and the type of business to look for. The workflow creates one search per city.</p>
+<h3>3. Searching Google Maps</h3>
+<p>The workflow queries Google Maps through <strong>SerpApi</strong>. An alternative branch using <strong>Apify</strong> is ready if you want to switch providers. Results from each source are normalized into a common format, then merged.</p>
+<h3>4. Qualification</h3>
+<p>A <em>Code</em> node keeps only the businesses that match the criteria: category, website or phone number, rating, and so on. The criteria are adapted to each client.</p>
+<h3>5. Removing duplicates</h3>
+<p>The workflow fetches the leads already stored in <strong>Supabase</strong> and discards those that already exist. It then keeps the 30 best new leads of the week.</p>
+<h3>6. Personalized AI message</h3>
+<p>For each lead, a <strong>Gemini</strong> model writes a first outreach message tailored to the business (activity, city, website).</p>
+<h3>7. Saving and summary</h3>
+<p>New leads and their messages are saved to Supabase. A weekly summary is then sent via <strong>Gmail</strong>. A WhatsApp branch can also send this summary.</p>
+
+<h2>Tools used</h2>
+<ul class="tools"><li>n8n</li><li>SerpApi</li><li>Google Maps</li><li>Apify</li><li>Gemini</li><li>Supabase</li><li>Gmail</li></ul>
+
+<h2>Things to watch out for</h2>
+<ul>
+  <li><strong>Prospecting rules:</strong> only public business data is used, and sending messages must comply with the applicable regulations (GDPR in Europe, Law 09-08 in Morocco), with an easy way to opt out.</li>
+  <li><strong>Human review:</strong> generated messages are drafts. I recommend reviewing them before sending, at least at the beginning.</li>
+  <li><strong>API costs:</strong> SerpApi, Apify and AI models have their own pricing. The weekly volume is easy to adjust to control the budget.</li>
+</ul>
+
+<h2>What this workflow brings</h2>
+<ul>
+  <li>A new list of qualified prospects every week, without manual searching.</li>
+  <li>No duplicates: each business appears only once.</li>
+  <li>Leads centralized in a database, with a message ready for each one.</li>
+</ul>
+<p>This workflow adapts to many industries: agencies, real estate, trades, B2B services… You only need to change the type of business, the cities and the qualification criteria.</p>
