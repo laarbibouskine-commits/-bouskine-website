@@ -1,11 +1,8 @@
 // ===== Configuration =====
-// Numéro WhatsApp au format international sans "+" ni espaces (ex : "212600000000").
-// Laisser vide pour masquer le bouton WhatsApp.
-const WHATSAPP_NUMBER = "212687184542";
 // URL d'un webhook n8n qui reçoit les messages du formulaire (POST JSON).
 // Laisser vide pour ouvrir l'application email du visiteur à la place.
 const N8N_WEBHOOK_URL = "";
-const CONTACT_EMAIL = "laarbi.bouskine@gmail.com";
+const CONTACT_EMAIL = "contact@bouskine.com";
 
 // ===== Année du footer =====
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -41,23 +38,15 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// ===== WhatsApp =====
-const waItem = document.querySelector("[data-whatsapp]");
-if (WHATSAPP_NUMBER) {
-  const text = encodeURIComponent("Bonjour, je viens de votre site Bouskine Digital Solutions.");
-  document.getElementById("wa-link").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-} else {
-  waItem.remove();
-}
-
-// ===== Formulaire de contact =====
+// ===== Formulaire de contact (page d'accueil uniquement) =====
 const form = document.getElementById("contact-form");
-const status = form.querySelector(".form-status");
+const status = form?.querySelector(".form-status");
 
-form.addEventListener("submit", async (e) => {
+form?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form));
 
+  const t = window.t || ((k) => k);
   if (!N8N_WEBHOOK_URL) {
     const subject = encodeURIComponent(`[Site] ${data.service} — ${data.name}`);
     const body = encodeURIComponent(`${data.message}\n\n— ${data.name} (${data.email})`);
@@ -68,20 +57,20 @@ form.addEventListener("submit", async (e) => {
   const btn = form.querySelector("button");
   btn.disabled = true;
   status.className = "form-status";
-  status.textContent = "Envoi en cours…";
+  status.textContent = t("form.sending");
   try {
     const res = await fetch(N8N_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, source: location.href, date: new Date().toISOString() }),
+      body: JSON.stringify({ ...data, lang: window.getLang?.(), source: location.href, date: new Date().toISOString() }),
     });
     if (!res.ok) throw new Error(res.status);
     form.reset();
     status.classList.add("ok");
-    status.textContent = "Merci ! Votre message a bien été envoyé. Je vous réponds très vite.";
+    status.textContent = t("form.ok");
   } catch {
     status.classList.add("err");
-    status.textContent = `Oups, une erreur est survenue. Écrivez-moi directement à ${CONTACT_EMAIL}.`;
+    status.textContent = t("form.err").replace("{email}", CONTACT_EMAIL);
   } finally {
     btn.disabled = false;
   }

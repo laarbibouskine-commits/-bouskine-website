@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,27 +14,33 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js"></script>
 </head>
 <body>
 
 <header class="nav" id="top">
   <div class="container nav-inner">
-    <a href="#top" class="brand">
+    <a href="/" class="brand">
       <img src="assets/logo-mark.png" alt="Logo Bouskine" width="40" height="40">
       <span><strong>BOUSKINE</strong><small>Digital Solutions</small></span>
     </a>
-    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav class="links">
-      <a href="#services">Services</a>
-      <a href="#projets">Réalisations</a>
-      <a href="#automations">Exemples</a>
-      <a href="#process">Méthode</a>
-      <a href="#about">À propos</a>
-      <a href="#contact" class="btn btn-sm">Contact</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#projets" data-i18n="nav.projects">Réalisations</a>
+      <a href="#automations" data-i18n="nav.examples">Exemples</a>
+      <a href="#process" data-i18n="nav.process">Méthode</a>
+      <a href="/a-propos" data-i18n="nav.about">À propos</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language / اللغة">
+        <button type="button" data-lang-btn="fr">FR</button>
+        <button type="button" data-lang-btn="en">EN</button>
+        <button type="button" data-lang-btn="ar">ع</button>
+      </div>
+      <a href="#contact" class="btn btn-sm" data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -47,25 +53,25 @@
     <div class="container hero-grid">
       <div class="hero-text reveal">
         <p class="eyebrow">Automate • Grow • Focus</p>
-        <h1>Automatisez votre business, <span class="grad">concentrez-vous sur l'essentiel.</span></h1>
-        <p class="lead">J'aide les entreprises et entrepreneurs à gagner du temps en automatisant leurs tâches répétitives avec <strong>n8n</strong> et l'<strong>intelligence artificielle</strong> — leads, emails, CRM, WhatsApp, réseaux sociaux, factures et plus encore.</p>
+        <h1 data-i18n="hero.title">Automatisez votre business, <span class="grad">concentrez-vous sur l'essentiel.</span></h1>
+        <p class="lead" data-i18n="hero.lead">J'aide les entreprises et entrepreneurs à gagner du temps en automatisant leurs tâches répétitives avec <strong>n8n</strong> et l'<strong>intelligence artificielle</strong> — leads, emails, CRM, WhatsApp, réseaux sociaux, factures et plus encore.</p>
         <div class="cta-row">
-          <a href="#contact" class="btn">Demander un devis gratuit</a>
-          <a href="#services" class="btn btn-ghost">Voir mes services</a>
+          <a href="#contact" class="btn" data-i18n="hero.cta1">Demander un devis gratuit</a>
+          <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Voir mes services</a>
         </div>
         <ul class="hero-stats">
-          <li><strong>n8n</strong><span>Expert automatisation</span></li>
-          <li><strong>IA</strong><span>Agents & chatbots</span></li>
-          <li><strong>24/7</strong><span>Vos workflows travaillent</span></li>
+          <li><strong>n8n</strong><span data-i18n="hero.stat1">Expert automatisation</span></li>
+          <li><strong data-i18n="hero.stat2k">IA</strong><span data-i18n="hero.stat2">Agents & chatbots</span></li>
+          <li><strong>24/7</strong><span data-i18n="hero.stat3">Vos workflows travaillent</span></li>
         </ul>
       </div>
       <div class="hero-visual reveal">
         <div class="flow-card">
-          <div class="flow-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><em>workflow · nouveau lead</em></div>
+          <div class="flow-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><em data-i18n="flow.head">workflow · nouveau lead</em></div>
           <div class="flow">
-            <div class="node"><i>⚡</i><span>Formulaire web</span></div>
+            <div class="node"><i>⚡</i><span data-i18n="flow.n1">Formulaire web</span></div>
             <div class="wire"></div>
-            <div class="node"><i>🤖</i><span>Qualification IA</span></div>
+            <div class="node"><i>🤖</i><span data-i18n="flow.n2">Qualification IA</span></div>
             <div class="wire"></div>
             <div class="node split">
               <div><i>📊</i><span>CRM</span></div>
@@ -73,7 +79,7 @@
               <div><i>✉️</i><span>Email</span></div>
             </div>
           </div>
-          <div class="flow-foot">✓ Exécuté en 1.2s — 0 intervention manuelle</div>
+          <div class="flow-foot" data-i18n="flow.foot">✓ Exécuté en 1.2s — 0 intervention manuelle</div>
         </div>
       </div>
     </div>
@@ -83,40 +89,40 @@
   <section id="services" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Services</p>
-        <h2>Ce que je peux faire pour vous</h2>
-        <p>Des solutions digitales sur mesure pour automatiser, développer et simplifier votre activité.</p>
+        <p class="eyebrow" data-i18n="nav.services">Services</p>
+        <h2 data-i18n="services.title">Ce que je peux faire pour vous</h2>
+        <p data-i18n="services.sub">Des solutions digitales sur mesure pour automatiser, développer et simplifier votre activité.</p>
       </div>
       <div class="cards">
         <article class="card featured reveal">
           <div class="icon">⚙️</div>
-          <h3>Automatisation & IA</h3>
-          <p>Création de workflows n8n qui connectent vos outils (Gmail, Google Sheets, CRM, WhatsApp, Slack…) et intègrent l'IA pour trier, répondre et décider à votre place.</p>
-          <ul><li>Workflows n8n sur mesure</li><li>Agents IA & chatbots</li><li>Intégrations API</li></ul>
+          <h3 data-i18n="s1.t">Automatisation & IA</h3>
+          <p data-i18n="s1.p">Création de workflows n8n qui connectent vos outils (Gmail, Google Sheets, CRM, WhatsApp, Slack…) et intègrent l'IA pour trier, répondre et décider à votre place.</p>
+          <ul data-i18n="s1.l"><li>Workflows n8n sur mesure</li><li>Agents IA & chatbots</li><li>Intégrations API</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon">📈</div>
-          <h3>Marketing & Réseaux sociaux</h3>
-          <p>Publication automatique de contenu, génération de posts avec l'IA, suivi des leads et reporting de vos campagnes.</p>
-          <ul><li>Planification automatique</li><li>Contenu généré par IA</li><li>Suivi des performances</li></ul>
+          <h3 data-i18n="s2.t">Marketing & Réseaux sociaux</h3>
+          <p data-i18n="s2.p">Publication automatique de contenu, génération de posts avec l'IA, suivi des leads et reporting de vos campagnes.</p>
+          <ul data-i18n="s2.l"><li>Planification automatique</li><li>Contenu généré par IA</li><li>Suivi des performances</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon">💻</div>
-          <h3>Sites web & Apps</h3>
-          <p>Sites vitrines modernes, rapides et adaptés au mobile, connectés à vos automatisations (formulaires, réservations, paiements).</p>
-          <ul><li>Sites vitrines & landing pages</li><li>Formulaires intelligents</li><li>Hébergement & domaine</li></ul>
+          <h3 data-i18n="s3.t">Sites web & Apps</h3>
+          <p data-i18n="s3.p">Sites vitrines modernes, rapides et adaptés au mobile, connectés à vos automatisations (formulaires, réservations, paiements).</p>
+          <ul data-i18n="s3.l"><li>Sites vitrines & landing pages</li><li>Formulaires intelligents</li><li>Hébergement & domaine</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon">👥</div>
-          <h3>Solutions Business</h3>
-          <p>Automatisation de vos processus internes : facturation, relances clients, gestion des commandes, onboarding et tableaux de bord.</p>
-          <ul><li>Factures & relances</li><li>Gestion des commandes</li><li>Dashboards & rapports</li></ul>
+          <h3 data-i18n="s4.t">Solutions Business</h3>
+          <p data-i18n="s4.p">Automatisation de vos processus internes : facturation, relances clients, gestion des commandes, onboarding et tableaux de bord.</p>
+          <ul data-i18n="s4.l"><li>Factures & relances</li><li>Gestion des commandes</li><li>Dashboards & rapports</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon">💡</div>
-          <h3>Des idées aux résultats</h3>
-          <p>Audit de vos process, conseil et accompagnement : on identifie ensemble ce qui peut être automatisé et on le met en place.</p>
-          <ul><li>Audit gratuit</li><li>Conseil & stratégie</li><li>Formation & support</li></ul>
+          <h3 data-i18n="s5.t">Des idées aux résultats</h3>
+          <p data-i18n="s5.p">Audit de vos process, conseil et accompagnement : on identifie ensemble ce qui peut être automatisé et on le met en place.</p>
+          <ul data-i18n="s5.l"><li>Audit gratuit</li><li>Conseil & stratégie</li><li>Formation & support</li></ul>
         </article>
       </div>
     </div>
@@ -126,55 +132,55 @@
   <section id="projets" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Réalisations</p>
-        <h2>Des workflows n8n en production</h2>
-        <p>Quelques automatisations que j'ai conçues et qui tournent tous les jours.</p>
+        <p class="eyebrow" data-i18n="nav.projects">Réalisations</p>
+        <h2 data-i18n="projects.title">Des workflows n8n en production</h2>
+        <p data-i18n="projects.sub">Quelques automatisations que j'ai conçues et qui tournent tous les jours.</p>
       </div>
       <div class="projects">
         <article class="project reveal">
           <div class="project-media">
-            <video src="assets/projects/social-auto-posts.mp4" poster="assets/projects/social-auto-posts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du workflow n8n de publication automatique en cours d'exécution"></video>
+            <video src="assets/projects/social-auto-posts.mp4" poster="assets/projects/social-auto-posts.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-aria="p1.aria" aria-label="Vidéo du workflow n8n de publication automatique en cours d'exécution"></video>
           </div>
           <div class="project-body">
-            <span class="tag">Marketing & Réseaux sociaux</span>
-            <h3>Publication automatique Facebook & Instagram</h3>
-            <p>Chaque jour à heure fixe, le workflow choisit une audience cible, analyse les hashtags tendance sur Instagram, génère une image avec l'IA, rédige le post, puis publie automatiquement sur la page Facebook et le compte Instagram — et envoie une notification WhatsApp une fois terminé.</p>
+            <span class="tag" data-i18n="s2.t">Marketing & Réseaux sociaux</span>
+            <h3 data-i18n="p1.t">Publication automatique Facebook & Instagram</h3>
+            <p data-i18n="p1.p">Chaque jour à heure fixe, le workflow choisit une audience cible, analyse les hashtags tendance sur Instagram, génère une image avec l'IA, rédige le post, puis publie automatiquement sur la page Facebook et le compte Instagram — et envoie une notification WhatsApp une fois terminé.</p>
             <ul class="stack"><li>n8n</li><li>Apify</li><li>Cloudflare AI</li><li>Cloudinary</li><li>OpenRouter</li><li>Facebook</li><li>Instagram</li><li>WhatsApp</li></ul>
           </div>
         </article>
         <article class="project reveal">
           <div class="project-media">
-            <video src="assets/projects/leads-agences.mp4" poster="assets/projects/leads-agences.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du workflow n8n de génération de leads en cours d'exécution"></video>
+            <video src="assets/projects/leads-agences.mp4" poster="assets/projects/leads-agences.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-aria="p2.aria" aria-label="Vidéo du workflow n8n de génération de leads en cours d'exécution"></video>
           </div>
           <div class="project-body">
-            <span class="tag">Prospection & Leads</span>
-            <h3>Génération de leads B2B automatique</h3>
-            <p>Chaque lundi, le workflow recherche des entreprises ciblées sur Google Maps dans plusieurs villes, fusionne et qualifie les résultats, écarte les leads déjà connus, puis l'IA rédige un message de prospection personnalisé pour chacun. Les nouveaux leads sont enregistrés dans la base de données et un résumé de la semaine est envoyé par email.</p>
+            <span class="tag" data-i18n="p2.tag">Prospection & Leads</span>
+            <h3 data-i18n="p2.t">Génération de leads B2B automatique</h3>
+            <p data-i18n="p2.p">Chaque lundi, le workflow recherche des entreprises ciblées sur Google Maps dans plusieurs villes, fusionne et qualifie les résultats, écarte les leads déjà connus, puis l'IA rédige un message de prospection personnalisé pour chacun. Les nouveaux leads sont enregistrés dans la base de données et un résumé de la semaine est envoyé par email.</p>
             <ul class="stack"><li>n8n</li><li>SerpApi</li><li>Google Maps</li><li>Gemini</li><li>Supabase</li><li>Gmail</li></ul>
           </div>
         </article>
         <article class="project reveal">
-          <div class="project-media canvas" role="img" aria-label="Schéma du workflow : un agent manager coordonne 7 agents IA, puis l'article est rédigé, illustré, publié sur WordPress et optimisé avec Rank Math">
+          <div class="project-media canvas" role="img" data-i18n-aria="p3.aria" aria-label="Schéma du workflow : un agent manager coordonne 7 agents IA, puis l'article est rédigé, illustré, publié sur WordPress et optimisé avec Rank Math">
             <div class="pipeline">
-              <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small>Agent IA</small></div>
+              <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small data-i18n="p3.n1">Agent IA</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>✍️</i><span>Article Writer</span><small>Rédaction</small></div>
+              <div class="pnode"><i>✍️</i><span>Article Writer</span><small data-i18n="p3.n2">Rédaction</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>🖼️</i><span>Image à la une</span><small>Génération IA</small></div>
+              <div class="pnode"><i>🖼️</i><span data-i18n="p3.n3t">Image à la une</span><small data-i18n="p3.n3">Génération IA</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>📰</i><span>WordPress</span><small>Publication</small></div>
+              <div class="pnode"><i>📰</i><span>WordPress</span><small data-i18n="p3.n4">Publication</small></div>
               <div class="pwire"></div>
               <div class="pnode"><i>📈</i><span>Rank Math</span><small>SEO</small></div>
             </div>
-            <div class="agents">
+            <div class="agents" data-i18n="p3.agents">
               <span>🔎 Keywords</span><span>🕵️ Concurrents</span><span>🌐 Perplexity</span><span>🏷️ Titres</span><span>📝 Descriptions</span><span>🔗 Liens internes</span><span>🎨 Gemini</span>
             </div>
           </div>
           <div class="project-body">
-            <span class="tag">Automatisation & IA</span>
-            <h3>Agent IA de blogging SEO pour WordPress</h3>
-            <p>Une équipe d'agents IA qui recherche les mots-clés, analyse les articles concurrents, rédige l'article, crée l'image à la une, ajoute les liens internes, puis publie sur WordPress avec le SEO Rank Math optimisé.</p>
-            <ul class="stack"><li>n8n</li><li>Agents IA</li><li>Perplexity</li><li>Gemini</li><li>WordPress</li><li>Rank Math</li></ul>
+            <span class="tag" data-i18n="s1.t">Automatisation & IA</span>
+            <h3 data-i18n="p3.t">Agent IA de blogging SEO pour WordPress</h3>
+            <p data-i18n="p3.p">Une équipe d'agents IA qui recherche les mots-clés, analyse les articles concurrents, rédige l'article, crée l'image à la une, ajoute les liens internes, puis publie sur WordPress avec le SEO Rank Math optimisé.</p>
+            <ul class="stack"><li>n8n</li><li data-i18n="p3.stack">Agents IA</li><li>Perplexity</li><li>Gemini</li><li>WordPress</li><li>Rank Math</li></ul>
           </div>
         </article>
       </div>
@@ -185,17 +191,17 @@
   <section id="automations" class="section alt">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Exemples</p>
-        <h2>Automatisations que je construis</h2>
-        <p>Quelques exemples concrets de workflows qui font gagner des heures chaque semaine.</p>
+        <p class="eyebrow" data-i18n="nav.examples">Exemples</p>
+        <h2 data-i18n="ex.title">Automatisations que je construis</h2>
+        <p data-i18n="ex.sub">Quelques exemples concrets de workflows qui font gagner des heures chaque semaine.</p>
       </div>
       <div class="usecases">
-        <div class="usecase reveal"><h4>💬 Réponse WhatsApp automatique</h4><p>Chaque nouveau message reçoit une réponse IA instantanée, et le lead est enregistré dans votre CRM.</p></div>
-        <div class="usecase reveal"><h4>📥 Capture & qualification de leads</h4><p>Formulaire → qualification par IA → Google Sheets / CRM → notification à votre équipe.</p></div>
-        <div class="usecase reveal"><h4>🧾 Facturation automatique</h4><p>Génération des factures PDF, envoi par email et relance automatique des impayés.</p></div>
-        <div class="usecase reveal"><h4>📱 Publication réseaux sociaux</h4><p>Création de posts avec l'IA et publication programmée sur Facebook, Instagram et LinkedIn.</p></div>
-        <div class="usecase reveal"><h4>📧 Tri intelligent des emails</h4><p>L'IA lit, classe et répond aux emails simples, et vous alerte seulement pour l'important.</p></div>
-        <div class="usecase reveal"><h4>📊 Rapports automatiques</h4><p>Un résumé de vos ventes et statistiques envoyé chaque matin par email ou WhatsApp.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u1.t">💬 Réponse WhatsApp automatique</h4><p data-i18n="u1.p">Chaque nouveau message reçoit une réponse IA instantanée, et le lead est enregistré dans votre CRM.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u2.t">📥 Capture & qualification de leads</h4><p data-i18n="u2.p">Formulaire → qualification par IA → Google Sheets / CRM → notification à votre équipe.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u3.t">🧾 Facturation automatique</h4><p data-i18n="u3.p">Génération des factures PDF, envoi par email et relance automatique des impayés.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u4.t">📱 Publication réseaux sociaux</h4><p data-i18n="u4.p">Création de posts avec l'IA et publication programmée sur Facebook, Instagram et LinkedIn.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u5.t">📧 Tri intelligent des emails</h4><p data-i18n="u5.p">L'IA lit, classe et répond aux emails simples, et vous alerte seulement pour l'important.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u6.t">📊 Rapports automatiques</h4><p data-i18n="u6.p">Un résumé de vos ventes et statistiques envoyé chaque matin par email ou WhatsApp.</p></div>
       </div>
     </div>
   </section>
@@ -204,14 +210,14 @@
   <section id="process" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Méthode</p>
-        <h2>Comment on travaille ensemble</h2>
+        <p class="eyebrow" data-i18n="nav.process">Méthode</p>
+        <h2 data-i18n="process.title">Comment on travaille ensemble</h2>
       </div>
       <ol class="steps">
-        <li class="reveal"><span>01</span><h4>Échange</h4><p>On discute de votre activité et des tâches qui vous prennent du temps.</p></li>
-        <li class="reveal"><span>02</span><h4>Proposition</h4><p>Je vous propose une solution claire, avec délai et prix fixes.</p></li>
-        <li class="reveal"><span>03</span><h4>Construction</h4><p>Je construis et teste vos workflows avec vos vrais outils.</p></li>
-        <li class="reveal"><span>04</span><h4>Livraison & suivi</h4><p>Mise en production, formation et support après livraison.</p></li>
+        <li class="reveal"><span>01</span><h4 data-i18n="st1.t">Échange</h4><p data-i18n="st1.p">On discute de votre activité et des tâches qui vous prennent du temps.</p></li>
+        <li class="reveal"><span>02</span><h4 data-i18n="st2.t">Proposition</h4><p data-i18n="st2.p">Je vous propose une solution claire, avec délai et prix fixes.</p></li>
+        <li class="reveal"><span>03</span><h4 data-i18n="st3.t">Construction</h4><p data-i18n="st3.p">Je construis et teste vos workflows avec vos vrais outils.</p></li>
+        <li class="reveal"><span>04</span><h4 data-i18n="st4.t">Livraison & suivi</h4><p data-i18n="st4.p">Mise en production, formation et support après livraison.</p></li>
       </ol>
     </div>
   </section>
@@ -223,11 +229,12 @@
         <img src="assets/logo-full.jpg" alt="Bouskine Digital Solutions" width="352" height="353" loading="lazy">
       </div>
       <div class="about-text reveal">
-        <p class="eyebrow">À propos</p>
-        <h2>Laarbi Bouskine</h2>
-        <p class="role">Fondateur de Bouskine Digital Solutions · Spécialiste automatisation n8n & IA</p>
-        <p>Passionné par l'automatisation et l'intelligence artificielle, j'aide les entreprises à se libérer des tâches répétitives pour se concentrer sur leur croissance. Chaque workflow que je construis est pensé pour être simple, fiable et rentable.</p>
+        <p class="eyebrow" data-i18n="nav.about">À propos</p>
+        <h2 data-i18n="about.name">Laarbi Bouskine</h2>
+        <p class="role" data-i18n="about.role">Fondateur de Bouskine Digital Solutions · Spécialiste automatisation n8n & IA</p>
+        <p data-i18n="about.p">Passionné par l'automatisation et l'intelligence artificielle, j'aide les entreprises à se libérer des tâches répétitives pour se concentrer sur leur croissance. Chaque workflow que je construis est pensé pour être simple, fiable et rentable.</p>
         <p class="motto">Your ideas • Our automation • A brighter tomorrow</p>
+        <p><a href="/a-propos" class="more-link" data-i18n="about.more">En savoir plus →</a></p>
       </div>
     </div>
   </section>
@@ -236,28 +243,38 @@
   <section id="contact" class="section contact-section">
     <div class="container contact">
       <div class="contact-info reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Parlons de votre projet</h2>
-        <p>Décrivez-moi ce que vous voulez automatiser, je vous réponds rapidement avec une proposition.</p>
+        <p class="eyebrow" data-i18n="nav.contact">Contact</p>
+        <h2 data-i18n="contact.title">Parlons de votre projet</h2>
+        <p data-i18n="contact.sub">Décrivez-moi ce que vous voulez automatiser, je vous réponds rapidement avec une proposition.</p>
         <ul class="contact-list">
-          <li><a href="mailto:laarbi.bouskine@gmail.com"><i>✉️</i>laarbi.bouskine@gmail.com</a></li>
-          <li data-whatsapp><a href="#" id="wa-link" target="_blank" rel="noopener"><i>💬</i>WhatsApp</a></li>
+          <li>
+            <a href="https://wa.me/212687184542" target="_blank" rel="noopener" class="contact-card wa-link">
+              <span class="ci ci-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.360.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg></span>
+              <span><small>WhatsApp</small><strong dir="ltr">+212 6 87 18 45 42</strong></span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@bouskine.com" class="contact-card">
+              <span class="ci ci-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm-1 1 9 7 9-7"/></svg></span>
+              <span><small>Email</small><strong>contact@bouskine.com</strong></span>
+            </a>
+          </li>
         </ul>
       </div>
       <form class="contact-form reveal" id="contact-form">
-        <label>Nom<input name="name" required autocomplete="name"></label>
+        <label><span data-i18n="form.name">Nom</span><input name="name" required autocomplete="name"></label>
         <label>Email<input name="email" type="email" required autocomplete="email"></label>
-        <label>Service
+        <label><span data-i18n="form.service">Service</span>
           <select name="service">
-            <option>Automatisation & IA</option>
-            <option>Marketing & Réseaux sociaux</option>
-            <option>Sites web & Apps</option>
-            <option>Solutions Business</option>
-            <option>Autre</option>
+            <option value="Automatisation & IA" data-i18n="s1.t">Automatisation & IA</option>
+            <option value="Marketing & Réseaux sociaux" data-i18n="s2.t">Marketing & Réseaux sociaux</option>
+            <option value="Sites web & Apps" data-i18n="s3.t">Sites web & Apps</option>
+            <option value="Solutions Business" data-i18n="s4.t">Solutions Business</option>
+            <option value="Autre" data-i18n="form.other">Autre</option>
           </select>
         </label>
-        <label>Message<textarea name="message" rows="5" required placeholder="Ex : je veux répondre automatiquement à mes clients sur WhatsApp…"></textarea></label>
-        <button class="btn" type="submit">Envoyer le message</button>
+        <label><span data-i18n="form.message">Message</span><textarea name="message" rows="5" required data-i18n-ph="form.ph" placeholder="Ex : je veux répondre automatiquement à mes clients sur WhatsApp…"></textarea></label>
+        <button class="btn" type="submit" data-i18n="form.send">Envoyer le message</button>
         <p class="form-status" role="status"></p>
       </form>
     </div>
@@ -265,15 +282,47 @@
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="brand">
-      <img src="assets/logo-mark.png" alt="" width="32" height="32">
-      <span><strong>BOUSKINE</strong><small>Digital Solutions</small></span>
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="/" class="brand">
+        <img src="assets/logo-mark.png" alt="" width="36" height="36">
+        <span><strong>BOUSKINE</strong><small>Digital Solutions</small></span>
+      </a>
+      <p class="footer-tag"><span data-i18n="footer.tag">Automatisation n8n & IA pour les entreprises.</span><br>Automate • Grow • Focus</p>
+      <div class="socials">
+        <a href="https://wa.me/212687184542" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg></a>
+        <a href="mailto:contact@bouskine.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm-1 1 9 7 9-7"/></svg></a>
+      </div>
     </div>
-    <p>Automate • Grow • Focus</p>
-    <p class="copy">© <span id="year"></span> Bouskine Digital Solutions</p>
+    <div class="footer-col">
+      <h4 data-i18n="footer.nav">Navigation</h4>
+      <a href="/#services" data-i18n="nav.services">Services</a>
+      <a href="/#projets" data-i18n="nav.projects">Réalisations</a>
+      <a href="/#process" data-i18n="nav.process">Méthode</a>
+      <a href="/#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.company">Entreprise</h4>
+      <a href="/a-propos" data-i18n="nav.about">À propos</a>
+      <a href="/confidentialite" data-i18n="footer.privacy">Politique de confidentialité</a>
+      <a href="/conditions" data-i18n="footer.terms">Conditions d'utilisation</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="nav.contact">Contact</h4>
+      <a href="mailto:contact@bouskine.com">contact@bouskine.com</a>
+      <a href="https://wa.me/212687184542" target="_blank" rel="noopener" class="wa-link" dir="ltr">+212 6 87 18 45 42</a>
+      <span data-i18n="footer.loc">Maroc · Clients dans le monde entier</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Bouskine Digital Solutions. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+    <p><a href="/confidentialite" data-i18n="footer.privacyShort">Confidentialité</a> · <a href="/conditions" data-i18n="footer.termsShort">Conditions</a></p>
   </div>
 </footer>
+
+<a class="wa-float wa-link" href="https://wa.me/212687184542" target="_blank" rel="noopener" data-i18n-aria="wa.aria" aria-label="Discuter sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg>
+</a>
 
 <script src="script.js"></script>
 </body>
