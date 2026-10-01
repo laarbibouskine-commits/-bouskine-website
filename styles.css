@@ -190,6 +190,7 @@ h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); font-weight: 800; margin-bottom: 2
 .socials { display: flex; gap: 10px; margin-top: 6px; }
 .socials a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; background: rgba(255, 255, 255, .07); color: #fff !important; transition: background .2s; }
 .socials a:first-child:hover { background: #25d366; }
+.socials a.social-fb:hover { background: #1877f2; }
 .socials a:last-child:hover { background: var(--blue); }
 .socials svg { width: 20px; height: 20px; }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 48px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, .08); font-size: .85rem; }
