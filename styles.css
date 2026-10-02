@@ -287,6 +287,12 @@ html[dir="rtl"] .callout { border-left: 0; border-right: 4px solid #f59e0b; }
   html { scroll-behavior: auto; }
 }
 
+/* Motion (fx.js) drives transforms on these; keep CSS from fighting it */
+.fx .reveal { transition: none; }
+.fx .btn { transition: box-shadow .2s, background .2s, border-color .2s; }
+.fx .card, .fx .post-card { transition: box-shadow .25s, border-color .25s; }
+.fx .btn:hover, .fx .card:hover, .fx .post-card:hover { transform: none; }
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero-grid, .about, .contact { grid-template-columns: 1fr; gap: 44px; }

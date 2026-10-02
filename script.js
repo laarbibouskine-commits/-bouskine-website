@@ -26,17 +26,20 @@ const nav = document.querySelector(".nav");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
 
 // ===== Animations d'apparition =====
-const observer = new IntersectionObserver(
-  (entries) =>
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("visible");
-        observer.unobserve(e.target);
-      }
-    }),
-  { threshold: 0.12 }
-);
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+// fx.js (Motion) handles this when it is active; otherwise fall back to the CSS reveal.
+if (!window.__fx) {
+  const observer = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+}
 
 // ===== Formulaire de contact (page d'accueil uniquement) =====
 const form = document.getElementById("contact-form");
