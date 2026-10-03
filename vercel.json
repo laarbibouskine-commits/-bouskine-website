@@ -11,6 +11,11 @@
       ],
       "destination": "https://www.bouskine.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/downloads/JobProof-1.0.0.apk",
+      "destination": "/downloads/JobProof-1.1.0.apk",
+      "permanent": false
     }
   ],
   "headers": [
