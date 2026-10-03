@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JobProof — Rapports d'intervention pour artisans | Bouskine Digital Solutions</title>
-  <meta name="description" content="JobProof : l'application Android qui permet aux artisans (plombiers, électriciens, chauffagistes…) de créer un rapport d'intervention avec photos, signature du client et PDF, et de l'envoyer par WhatsApp. Version bêta gratuite.">
+  <meta name="description" content="JobProof : l'application Android et iPhone qui permet aux artisans (plombiers, électriciens, chauffagistes…) de créer un rapport d'intervention avec photos, signature du client et PDF, et de l'envoyer par WhatsApp. Version bêta gratuite.">
   <meta property="og:title" content="JobProof — Rapports d'intervention pour artisans">
-  <meta property="og:description" content="Photos avant/après, signature du client, PDF professionnel, TVA belge et envoi par WhatsApp. Version bêta gratuite pour Android.">
+  <meta property="og:description" content="Photos avant/après, signature du client, PDF professionnel, TVA belge et envoi par WhatsApp. Version bêta gratuite pour Android et iPhone.">
   <link rel="canonical" href="https://www.bouskine.com/jobproof">
   <link rel="alternate" hreflang="fr" href="https://www.bouskine.com/jobproof">
   <link rel="alternate" hreflang="nl" href="https://www.bouskine.com/nl/jobproof">
@@ -28,6 +28,7 @@
     .jp-hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 26px 0 10px; }
     .jp-hero-cta .btn { text-decoration: none; }
     .jp-hero-cta .btn:not(.btn-ghost) { color: #fff; }
+    .jp-hero-cta .jp-ios { background: #0b1a45; box-shadow: 0 8px 20px rgba(11, 26, 69, .25); }
     .jp-meta { font-size: .85rem; color: var(--muted); }
     .jp-meta code { font-size: .78rem; word-break: break-all; }
     .jp-badge { display: inline-block; background: #fef3c7; color: #92400e; font-weight: 600; font-size: .78rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
@@ -68,15 +69,17 @@
 <section class="page-hero">
   <div class="container">
     <nav class="jp-lang" aria-label="Langue"><a href="/jobproof" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/nl/jobproof" hreflang="nl" lang="nl">NL</a><a href="/en/jobproof" hreflang="en" lang="en">EN</a></nav>
-    <span class="jp-badge">Version bêta · Android · Gratuit</span>
+    <span class="jp-badge">Version bêta · Android &amp; iPhone · Gratuit</span>
     <h1>JobProof — vos rapports d'intervention, sans paperasse</h1>
     <p>L'application pour plombiers, électriciens, chauffagistes et autres artisans : photos avant/après, signature du client, PDF professionnel à votre nom, et envoi en un geste par WhatsApp.</p>
     <div class="jp-hero-cta">
-      <a class="btn" href="/downloads/JobProof-1.0.0.apk" download>Télécharger pour Android (APK)</a>
-      <a class="btn btn-ghost" href="#installation" style="text-decoration:none">Comment l'installer ?</a>
+      <a class="btn jp-android" href="/downloads/JobProof-1.0.0.apk" download>Télécharger pour Android (APK)</a>
+      <a class="btn jp-ios" href="/app/">Ouvrir sur iPhone (iOS)</a>
+      <a class="btn btn-ghost" href="#installation" style="text-decoration:none;color:var(--navy)">Comment l'installer ?</a>
     </div>
-    <p class="jp-meta">Version 1.0.0 · 65 Mo · Android 6 ou plus récent · Octobre 2026<br>
-      Empreinte SHA-256 : <code>c1e53ee7b9318c304c018b09290744d26d4b1de1802d1d6f6ad978cb7736473b</code></p>
+    <p class="jp-meta">Android : version 1.0.0 · 65 Mo · Android 6 ou plus récent · Octobre 2026<br>iPhone : application web (Safari), aucune installation depuis l'App Store<br>
+      Empreinte SHA-256 (Android) : <code>c1e53ee7b9318c304c018b09290744d26d4b1de1802d1d6f6ad978cb7736473b</code></p>
+    <script>if(/iPhone|iPad|iPod/.test(navigator.userAgent)){var c=document.querySelector(".jp-hero-cta");c.insertBefore(c.querySelector(".jp-ios"),c.firstChild)}</script>
   </div>
 </section>
 
@@ -97,13 +100,22 @@
   <h2>Pour quels métiers ?</h2>
   <p>Plomberie, électricité, chauffage et climatisation, peinture, menuiserie, carrelage, toiture, jardinage, nettoyage, informatique… Chaque intervention reçoit l'icône de son métier. Toute activité de dépannage ou d'installation chez un particulier ou une entreprise s'y prête.</p>
 
-  <h2 id="installation">Installer l'application (Android)</h2>
+  <h2 id="installation">Installer l'application</h2>
+  <h3>Sur Android</h3>
   <ol class="jp-steps">
     <li><strong>Téléchargez l'APK</strong> avec le bouton ci-dessus, depuis le navigateur de votre téléphone (Chrome).</li>
     <li><strong>Ouvrez le fichier</strong> téléchargé. Si Android demande l'autorisation « Installer des applications inconnues », activez-la pour Chrome.</li>
     <li><strong>Appuyez sur Installer.</strong> Si Google Play Protect affiche un avertissement, choisissez « Installer quand même » : l'application n'est pas encore publiée sur le Play Store.</li>
     <li><strong>Ouvrez JobProof</strong>, puis renseignez votre entreprise, votre logo et votre taux horaire dans l'onglet <em>Profil</em>.</li>
   </ol>
+  <h3 id="iphone">Sur iPhone (iOS)</h3>
+  <ol class="jp-steps">
+    <li>Touchez le bouton <strong>« Ouvrir sur iPhone (iOS) »</strong> ci-dessus (ou allez sur <strong>www.bouskine.com/app</strong>) avec <strong>Safari</strong>.</li>
+    <li>Touchez le bouton <strong>Partager</strong> (le carré avec une flèche) en bas de l'écran.</li>
+    <li>Choisissez <strong>Sur l'écran d'accueil</strong>, puis <strong>Ajouter</strong>.</li>
+    <li>Ouvrez <strong>JobProof</strong> depuis l'écran d'accueil : l'application s'ouvre en plein écran comme une application normale. Autorisez l'appareil photo lorsque l'iPhone le demande.</li>
+  </ol>
+  <p class="jp-meta">Sur iPhone, JobProof est installé comme application web : pas de téléchargement sur l'App Store pour l'instant. Après la première ouverture, elle fonctionne aussi sans Internet. Particularités : pas de notifications de rappel, et le PDF s'ouvre via la fenêtre d'impression d'iOS (utilisez ensuite « Partager » pour l'enregistrer ou l'envoyer). Les données sont stockées dans Safari sur votre iPhone : ne supprimez pas les données de site et conservez vos PDF importants.</p>
 
   <div class="jp-note"><strong>Version bêta.</strong> JobProof est en test avec des artisans en Belgique. Vous pouvez rencontrer des défauts. Vos retours nous aident à l'améliorer : dites-nous ce qui manque, ce qui bloque et ce que vous aimeriez.</div>
 
@@ -119,7 +131,7 @@
   <h2>À savoir</h2>
   <ul>
     <li>JobProof produit un <strong>rapport d'intervention</strong>, pas une facture légale belge. Pour facturer, utilisez votre outil de facturation habituel avec les montants du rapport.</li>
-    <li>Pour l'instant : <strong>Android uniquement</strong>. Une version iPhone pourra suivre selon les retours.</li>
+    <li>Sur <strong>Android</strong>, JobProof s'installe avec un fichier APK ; sur <strong>iPhone</strong>, c'est une application web installée depuis Safari. Une publication sur le Play Store et l'App Store est envisagée plus tard.</li>
     <li>Gratuit pendant la période de test.</li>
   </ul>
 
@@ -137,7 +149,7 @@
     <details><summary>Puis-je utiliser mon logo ?</summary><p>Oui : onglet <em>Profil</em> → « Logo ». Sans logo, l'icône de votre métier est affichée à la place sur le PDF.</p></details>
     <details><summary>Les photos et signatures sont-elles dans le PDF ?</summary><p>Oui, ainsi que le détail des prix, la TVA et le total TTC.</p></details>
     <details><summary>Comment envoyer le rapport au client ?</summary><p>Sur la fiche de l'intervention : « Écrire au client sur WhatsApp » ouvre la conversation avec un message prêt, puis « Partager le PDF » permet de l'envoyer par WhatsApp, e-mail ou autre.</p></details>
-    <details><summary>Et sur iPhone ?</summary><p>Pas encore. Dites-nous si vous en avez besoin : cela influence nos priorités.</p></details>
+    <details><summary>Et sur iPhone ?</summary><p>Oui : JobProof fonctionne sur iPhone comme application web (installation depuis Safari, voir ci-dessus). Une version App Store est envisagée plus tard.</p></details>
   </div>
 </div>
 

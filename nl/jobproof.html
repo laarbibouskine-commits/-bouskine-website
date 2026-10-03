@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JobProof — Interventieverslagen voor vaklui | Bouskine Digital Solutions</title>
-  <meta name="description" content="JobProof: de Android-app waarmee vaklui (loodgieters, elektriciens, verwarmingstechnici…) een interventieverslag maken met foto's, handtekening van de klant en pdf, en het via WhatsApp doorsturen. Gratis bètaversie.">
+  <meta name="description" content="JobProof: de Android- en iPhone-app waarmee vaklui (loodgieters, elektriciens, verwarmingstechnici…) een interventieverslag maken met foto's, handtekening van de klant en pdf, en het via WhatsApp doorsturen. Gratis bètaversie.">
   <meta property="og:title" content="JobProof — Interventieverslagen voor vaklui">
-  <meta property="og:description" content="Foto's voor/na, handtekening van de klant, professionele pdf, Belgische btw en versturen via WhatsApp. Gratis bètaversie voor Android.">
+  <meta property="og:description" content="Foto's voor/na, handtekening van de klant, professionele pdf, Belgische btw en versturen via WhatsApp. Gratis bètaversie voor Android en iPhone.">
   <link rel="canonical" href="https://www.bouskine.com/nl/jobproof">
   <link rel="alternate" hreflang="fr" href="https://www.bouskine.com/jobproof">
   <link rel="alternate" hreflang="nl" href="https://www.bouskine.com/nl/jobproof">
@@ -28,6 +28,7 @@
     .jp-hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 26px 0 10px; }
     .jp-hero-cta .btn { text-decoration: none; }
     .jp-hero-cta .btn:not(.btn-ghost) { color: #fff; }
+    .jp-hero-cta .jp-ios { background: #0b1a45; box-shadow: 0 8px 20px rgba(11, 26, 69, .25); }
     .jp-meta { font-size: .85rem; color: var(--muted); }
     .jp-meta code { font-size: .78rem; word-break: break-all; }
     .jp-badge { display: inline-block; background: #fef3c7; color: #92400e; font-weight: 600; font-size: .78rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
@@ -68,15 +69,17 @@
 <section class="page-hero">
   <div class="container">
     <nav class="jp-lang" aria-label="Taal"><a href="/jobproof" hreflang="fr" lang="fr">FR</a><a href="/nl/jobproof" hreflang="nl" lang="nl" aria-current="true">NL</a><a href="/en/jobproof" hreflang="en" lang="en">EN</a></nav>
-    <span class="jp-badge">Bètaversie · Android · Gratis</span>
+    <span class="jp-badge">Bètaversie · Android &amp; iPhone · Gratis</span>
     <h1>JobProof — uw interventieverslagen, zonder papierwerk</h1>
     <p>De app voor loodgieters, elektriciens, verwarmingstechniekers en andere vaklui: foto's voor/na, handtekening van de klant, een professionele pdf op uw naam en met één tik doorsturen via WhatsApp.</p>
     <div class="jp-hero-cta">
-      <a class="btn" href="/downloads/JobProof-1.0.0.apk" download>Downloaden voor Android (APK)</a>
-      <a class="btn btn-ghost" href="#installation" style="text-decoration:none">Hoe installeren?</a>
+      <a class="btn jp-android" href="/downloads/JobProof-1.0.0.apk" download>Downloaden voor Android (APK)</a>
+      <a class="btn jp-ios" href="/app/">Openen op iPhone (iOS)</a>
+      <a class="btn btn-ghost" href="#installation" style="text-decoration:none;color:var(--navy)">Hoe installeren?</a>
     </div>
-    <p class="jp-meta">Versie 1.0.0 · 65 MB · Android 6 of recenter · oktober 2026<br>
-      SHA-256-vingerafdruk : <code>c1e53ee7b9318c304c018b09290744d26d4b1de1802d1d6f6ad978cb7736473b</code></p>
+    <p class="jp-meta">Android: versie 1.0.0 · 65 MB · Android 6 of recenter · oktober 2026<br>iPhone: webapp (Safari), geen installatie via de App Store<br>
+      SHA-256-vingerafdruk (Android) : <code>c1e53ee7b9318c304c018b09290744d26d4b1de1802d1d6f6ad978cb7736473b</code></p>
+    <script>if(/iPhone|iPad|iPod/.test(navigator.userAgent)){var c=document.querySelector(".jp-hero-cta");c.insertBefore(c.querySelector(".jp-ios"),c.firstChild)}</script>
   </div>
 </section>
 
@@ -97,13 +100,22 @@
   <h2>Voor welke beroepen?</h2>
   <p>Loodgieterij, elektriciteit, verwarming en airco, schilderwerk, schrijnwerk, tegelwerk, dakwerken, tuinwerk, schoonmaak, informatica… Elke interventie krijgt het pictogram van haar beroep. Elke herstelling of installatie bij een particulier of een bedrijf komt in aanmerking.</p>
 
-  <h2 id="installation">De app installeren (Android)</h2>
+  <h2 id="installation">De app installeren</h2>
+  <h3>Op Android</h3>
   <ol class="jp-steps">
     <li><strong>Download de APK</strong> met de knop hierboven, vanuit de browser van uw telefoon (Chrome).</li>
     <li><strong>Open het gedownloade bestand.</strong> Vraagt Android toestemming om “Onbekende apps te installeren”, schakel dat dan in voor Chrome.</li>
     <li><strong>Tik op Installeren.</strong> Toont Google Play Protect een waarschuwing, kies dan “Toch installeren”: de app staat nog niet in de Play Store.</li>
     <li><strong>Open JobProof</strong> en vul uw bedrijf, uw logo en uw uurtarief in op het tabblad <em>Profiel</em>.</li>
   </ol>
+  <h3 id="iphone">Op iPhone (iOS)</h3>
+  <ol class="jp-steps">
+    <li>Tik op de knop <strong>“Openen op iPhone (iOS)”</strong> hierboven (of ga naar <strong>www.bouskine.com/app</strong>) met <strong>Safari</strong>.</li>
+    <li>Tik onderaan het scherm op de knop <strong>Deel</strong> (het vierkant met een pijl).</li>
+    <li>Kies <strong>Zet op beginscherm</strong> en tik op <strong>Voeg toe</strong>.</li>
+    <li>Open <strong>JobProof</strong> vanaf het beginscherm: de app opent op volledig scherm, zoals een gewone app. Sta de camera toe wanneer de iPhone erom vraagt.</li>
+  </ol>
+  <p class="jp-meta">Op iPhone wordt JobProof geïnstalleerd als webapp: voorlopig geen download via de App Store. Na de eerste keer openen werkt ze ook zonder internet. Bijzonderheden: geen herinneringsmeldingen, en de pdf opent via het afdrukvenster van iOS (gebruik daarna “Deel” om hem op te slaan of te versturen). De gegevens worden in Safari op uw iPhone bewaard: wis geen websitegegevens en bewaar uw belangrijke pdf's.</p>
 
   <div class="jp-note"><strong>Bètaversie.</strong> JobProof wordt getest met vaklui in België. U kunt nog fouten tegenkomen. Uw feedback helpt ons de app te verbeteren: laat ons weten wat ontbreekt, wat vastloopt en wat u graag zou willen.</div>
 
@@ -119,7 +131,7 @@
   <h2>Goed om te weten</h2>
   <ul>
     <li>JobProof maakt een <strong>interventieverslag</strong>, geen geldige Belgische factuur. Om te factureren gebruikt u uw gewone factureringsprogramma met de bedragen uit het verslag.</li>
-    <li>Voorlopig: <strong>alleen Android</strong>. Een iPhone-versie kan volgen, afhankelijk van de feedback.</li>
+    <li>Op <strong>Android</strong> installeert u JobProof met een APK-bestand; op <strong>iPhone</strong> is het een webapp die u vanuit Safari installeert. Publicatie in de Play Store en de App Store is later gepland.</li>
     <li>Gratis tijdens de testperiode.</li>
   </ul>
 
@@ -137,7 +149,7 @@
     <details><summary>Kan ik mijn eigen logo gebruiken?</summary><p>Ja: tabblad <em>Profiel</em> → “Logo”. Zonder logo toont de pdf in de plaats het pictogram van uw beroep.</p></details>
     <details><summary>Staan de foto's en handtekeningen in de pdf?</summary><p>Ja, samen met het prijsdetail, de btw en het totaal incl. btw.</p></details>
     <details><summary>Hoe stuur ik het verslag naar de klant?</summary><p>Op de fiche van de interventie opent “Klant een WhatsApp sturen” het gesprek met een klaar bericht. Met “Pdf delen” stuurt u de pdf daarna via WhatsApp, e-mail of een andere app.</p></details>
-    <details><summary>En op iPhone?</summary><p>Nog niet. Laat het ons weten als u het nodig hebt: dat bepaalt onze prioriteiten.</p></details>
+    <details><summary>En op iPhone?</summary><p>Ja: JobProof werkt op iPhone als webapp (installeren vanuit Safari, zie hierboven). Een App Store-versie is later gepland.</p></details>
   </div>
 </div>
 

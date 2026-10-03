@@ -1,0 +1,17 @@
+{
+  "name": "JobProof",
+  "short_name": "JobProof",
+  "description": "Rapports d'intervention pour artisans : photos, signature du client, PDF et WhatsApp.",
+  "lang": "fr",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F766E",
+  "theme_color": "#0F766E",
+  "icons": [
+    { "src": "/app/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/app/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/app/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
