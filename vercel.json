@@ -3,9 +3,33 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "bouskine.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "bouskine.com"
+        }
+      ],
       "destination": "https://www.bouskine.com/$1",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/downloads/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.android.package-archive"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"JobProof-1.0.0.apk\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     }
   ]
 }

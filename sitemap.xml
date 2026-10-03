@@ -132,4 +132,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bouskine.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bouskine.com/ar/blog"/>
   </url>
+  <url>
+    <loc>https://www.bouskine.com/jobproof</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
 </urlset>
