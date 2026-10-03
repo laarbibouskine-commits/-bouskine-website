@@ -8,6 +8,10 @@
   <meta property="og:title" content="JobProof — Rapports d'intervention pour artisans">
   <meta property="og:description" content="Photos avant/après, signature du client, PDF professionnel, TVA belge et envoi par WhatsApp. Version bêta gratuite pour Android.">
   <link rel="canonical" href="https://www.bouskine.com/jobproof">
+  <link rel="alternate" hreflang="fr" href="https://www.bouskine.com/jobproof">
+  <link rel="alternate" hreflang="nl" href="https://www.bouskine.com/nl/jobproof">
+  <link rel="alternate" hreflang="en" href="https://www.bouskine.com/en/jobproof">
+  <link rel="alternate" hreflang="x-default" href="https://www.bouskine.com/jobproof">
   <meta property="og:url" content="https://www.bouskine.com/jobproof">
   <meta property="og:image" content="https://www.bouskine.com/assets/og-image.png">
   <meta property="og:type" content="website">
@@ -27,6 +31,9 @@
     .jp-meta { font-size: .85rem; color: var(--muted); }
     .jp-meta code { font-size: .78rem; word-break: break-all; }
     .jp-badge { display: inline-block; background: #fef3c7; color: #92400e; font-weight: 600; font-size: .78rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+    .jp-lang { display: flex; gap: 8px; align-items: center; font-size: .85rem; margin-bottom: 14px; color: var(--muted); }
+    .jp-lang a { text-decoration: none; color: var(--navy); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; font-weight: 600; }
+    .jp-lang a[aria-current="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
     .jp-steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 14px; margin: 24px 0; }
     .jp-steps li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px 18px 66px; position: relative; }
     .jp-steps li::before { content: counter(s); position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--grad); color: #fff; font-weight: 700; display: grid; place-items: center; }
@@ -60,6 +67,7 @@
 <main>
 <section class="page-hero">
   <div class="container">
+    <nav class="jp-lang" aria-label="Langue"><a href="/jobproof" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/nl/jobproof" hreflang="nl" lang="nl">NL</a><a href="/en/jobproof" hreflang="en" lang="en">EN</a></nav>
     <span class="jp-badge">Version bêta · Android · Gratuit</span>
     <h1>JobProof — vos rapports d'intervention, sans paperasse</h1>
     <p>L'application pour plombiers, électriciens, chauffagistes et autres artisans : photos avant/après, signature du client, PDF professionnel à votre nom, et envoi en un geste par WhatsApp.</p>
@@ -118,7 +126,7 @@
   <h2>Vos retours comptent</h2>
   <p>Un problème, une idée, une question ? Écrivez-nous en précisant votre modèle de téléphone et ce que vous faisiez au moment du souci (une capture d'écran aide beaucoup).</p>
   <p>
-    <a href="https://wa.me/212687184542?text=Bonjour%2C%20je%20teste%20JobProof%20et%20j%27ai%20un%20retour%20%3A" class="btn" target="_blank" rel="noopener" style="text-decoration:none;color:#fff">Envoyer un retour sur WhatsApp</a>
+    <a href="https://wa.me/212687184542?text=Bonjour%2C%20je%20teste%20JobProof%20et%20j'ai%20un%20retour%20%3A" class="btn" target="_blank" rel="noopener" style="text-decoration:none;color:#fff">Envoyer un retour sur WhatsApp</a>
     &nbsp; <a href="mailto:contact@bouskine.com?subject=Retour%20JobProof" class="btn btn-ghost" style="text-decoration:none;color:var(--navy)">Écrire par e-mail</a>
   </p>
 
