@@ -478,3 +478,8 @@ html[dir="rtl"] .show-next { right: auto; left: 28px; }
   .show-stage { height: 620px; }
   .show-cta { padding-right: 110px; }
 }
+
+/* homepage: tighter hero so the demo slideshow comes sooner */
+.hero { padding: 64px 0 72px; }
+#demos.page-demos { padding-block: 72px; }
+@media (max-width: 900px) { .hero { padding: 40px 0 48px; } #demos.page-demos { padding-block: 52px; } }
