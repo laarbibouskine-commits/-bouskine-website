@@ -138,3 +138,63 @@ form?.addEventListener("submit", async (e) => {
   document.addEventListener("click", (e) => { if (!box.contains(e.target)) set(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { set(false); btn.focus(); } });
 })();
+
+// ===== Slideshow automatique des démos =====
+(() => {
+  const root = document.getElementById("show");
+  if (!root) return;
+  const slides = [...root.querySelectorAll(".show-slide")];
+  const tabs = [...root.querySelectorAll(".show-tab")];
+  const DUR = 6500;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  root.style.setProperty("--dur", DUR + "ms");
+  let cur = 0, timer = null, paused = reduce, hover = false, away = false;
+
+  const show = (i) => {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.classList.toggle("is-on", k === cur); s.setAttribute("aria-hidden", String(k !== cur)); });
+    // restart the progress bar of the active tab
+    tabs.forEach((t, k) => { t.classList.remove("is-on"); if (k === cur) { void t.offsetWidth; t.classList.add("is-on"); } });
+    schedule();
+  };
+  const schedule = () => {
+    clearTimeout(timer);
+    if (!paused && !hover && !away) timer = setTimeout(() => show(cur + 1), DUR);
+  };
+  const setPaused = (p) => {
+    paused = p;
+    root.classList.toggle("paused", paused || hover);
+    schedule();
+  };
+
+  root.querySelector("#show-prev").addEventListener("click", () => show(cur - 1));
+  root.querySelector("#show-next").addEventListener("click", () => show(cur + 1));
+  tabs.forEach((t) => t.addEventListener("click", () => show(+t.dataset.i)));
+  const pauseBtn = root.querySelector("#show-pause");
+  pauseBtn.addEventListener("click", () => { setPaused(!paused); pauseBtn.setAttribute("aria-label", paused ? "Lecture" : "Pause"); });
+  // pause while the visitor hovers or focuses inside the show
+  const stage = root.querySelector(".show-stage");
+  const hov = (v) => { hover = v; root.classList.toggle("paused", paused || hover); schedule(); };
+  stage.addEventListener("mouseenter", () => hov(true));
+  stage.addEventListener("mouseleave", () => hov(false));
+  stage.addEventListener("focusin", () => hov(true));
+  stage.addEventListener("focusout", () => hov(false));
+  root.addEventListener("keydown", (e) => {
+    const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
+    if (e.key === "ArrowRight") show(cur + rtl);
+    if (e.key === "ArrowLeft") show(cur - rtl);
+  });
+  // swipe on touch
+  let x0 = null;
+  stage.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchend", (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+  });
+  // only run while on screen and tab visible
+  if ("IntersectionObserver" in window) new IntersectionObserver(([en]) => { away = !en.isIntersecting; schedule(); }).observe(root);
+  document.addEventListener("visibilitychange", () => hov(document.hidden));
+  root.classList.toggle("paused", paused);
+  show(0);
+})();

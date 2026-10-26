@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="i18n.js?v=5"></script>
 </head>
 <body>
 
@@ -86,57 +86,70 @@
         <h2 data-i18n="demos.title">Votre site, avant même de commander</h2>
         <p data-i18n="demos.sub">Voici quatre sites comme je les conçois : pensés pour donner envie, rassurer et faire réserver. Parcourez-les, puis dites-moi lequel vous ressemble.</p>
       </div>
-      <div class="slider reveal" id="slider" role="region" aria-roledescription="carousel" data-i18n-aria="demos.aria" aria-label="Démos de sites web">
-        <div class="slides" id="slides">
-          <article class="slide" data-theme="garage" aria-roledescription="slide" aria-label="1 / 4">
-            <div class="slide-text">
-              <span class="tag" data-i18n="d1.tag">Garage & mécanique</span>
-              <h3 data-i18n="d1.t">Inspirer confiance avant même la première visite</h3>
-              <p data-i18n="d1.p">Devis clair, prise de rendez-vous en un clic, tarifs transparents. Le client sait à qui il confie sa voiture.</p>
-              <ul data-i18n="d1.l"><li>Rendez-vous en ligne</li><li>Services et tarifs lisibles</li><li>Appel et WhatsApp directs</li></ul>
-              <a class="btn" href="/demos/garage/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+      <div class="show reveal" id="show" role="region" aria-roledescription="carousel" data-i18n-aria="demos.aria" aria-label="Démos de sites web">
+        <div class="show-stage">
+        <article class="show-slide is-on" style="--ac:#ffb020;--on:#14110a" aria-roledescription="slide" aria-label="1 / 4">
+          <div class="show-bg" style="background-image:url(/demos/photos/garage-hero.jpg)"></div>
+          <div class="show-copy">
+            <span class="show-tag" data-i18n="d1.tag">Garage & mécanique</span>
+            <h3 data-i18n="d1.t">Inspirer confiance avant même la première visite</h3>
+            <p data-i18n="d1.p">Devis clair, prise de rendez-vous en un clic, tarifs transparents. Le client sait à qui il confie sa voiture.</p>
+            <ul data-i18n="d1.l"><li>Rendez-vous en ligne</li><li>Services et tarifs lisibles</li><li>Appel et WhatsApp directs</li></ul>
+            <div class="show-cta">
+              <a class="btn show-open" href="/demos/garage/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+              <a class="show-link" href="/#contact" data-i18n="demos.cta">Je veux mon site sur mesure</a>
             </div>
-            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>garage-delcourt.be</span></div><div class="frame"><iframe src="/demos/garage/" title="Démo garage" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
-          </article>
-          <article class="slide" data-theme="salon" aria-roledescription="slide" aria-label="2 / 4">
-            <div class="slide-text">
-              <span class="tag" data-i18n="d2.tag">Salon & institut de beauté</span>
-              <h3 data-i18n="d2.t">Donner envie de réserver un moment pour soi</h3>
-              <p data-i18n="d2.p">Une ambiance douce, des soins présentés comme des promesses, une carte claire et la réservation à portée de pouce.</p>
-              <ul data-i18n="d2.l"><li>Carte des soins élégante</li><li>Réservation WhatsApp</li><li>Avis clients mis en valeur</li></ul>
-              <a class="btn" href="/demos/salon/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+          </div>
+          <span class="show-url" dir="ltr">garage-delcourt.be</span>
+        </article>
+        <article class="show-slide" style="--ac:#f1c9bd;--on:#3a2230" aria-roledescription="slide" aria-label="2 / 4" aria-hidden="true">
+          <div class="show-bg" style="background-image:url(/demos/photos/salon-hero.jpg)"></div>
+          <div class="show-copy">
+            <span class="show-tag" data-i18n="d2.tag">Salon & institut de beauté</span>
+            <h3 data-i18n="d2.t">Donner envie de réserver un moment pour soi</h3>
+            <p data-i18n="d2.p">Une ambiance douce, des soins présentés comme des promesses, une carte claire et la réservation à portée de pouce.</p>
+            <ul data-i18n="d2.l"><li>Carte des soins élégante</li><li>Réservation WhatsApp</li><li>Avis clients mis en valeur</li></ul>
+            <div class="show-cta">
+              <a class="btn show-open" href="/demos/salon/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+              <a class="show-link" href="/#contact" data-i18n="demos.cta">Je veux mon site sur mesure</a>
             </div>
-            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>maison-eclat.be</span></div><div class="frame"><iframe src="/demos/salon/" title="Démo salon de beauté" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
-          </article>
-          <article class="slide" data-theme="resto" aria-roledescription="slide" aria-label="3 / 4">
-            <div class="slide-text">
-              <span class="tag" data-i18n="d3.tag">Restaurant</span>
-              <h3 data-i18n="d3.t">Faire saliver avant de passer commande</h3>
-              <p data-i18n="d3.p">Une carte qui met l'eau à la bouche, l'histoire de la maison et une réservation en dix secondes.</p>
-              <ul data-i18n="d3.l"><li>Carte et menu du jour</li><li>Réservation de table</li><li>Horaires et accès immédiats</li></ul>
-              <a class="btn" href="/demos/restaurant/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+          </div>
+          <span class="show-url" dir="ltr">maison-eclat.be</span>
+        </article>
+        <article class="show-slide" style="--ac:#e08a4f;--on:#1b1208" aria-roledescription="slide" aria-label="3 / 4" aria-hidden="true">
+          <div class="show-bg" style="background-image:url(/demos/photos/resto-hero.jpg)"></div>
+          <div class="show-copy">
+            <span class="show-tag" data-i18n="d3.tag">Restaurant</span>
+            <h3 data-i18n="d3.t">Faire saliver avant de passer commande</h3>
+            <p data-i18n="d3.p">Une carte qui met l'eau à la bouche, l'histoire de la maison et une réservation en dix secondes.</p>
+            <ul data-i18n="d3.l"><li>Carte et menu du jour</li><li>Réservation de table</li><li>Horaires et accès immédiats</li></ul>
+            <div class="show-cta">
+              <a class="btn show-open" href="/demos/restaurant/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+              <a class="show-link" href="/#contact" data-i18n="demos.cta">Je veux mon site sur mesure</a>
             </div>
-            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>chez-olive.be</span></div><div class="frame"><iframe src="/demos/restaurant/" title="Démo restaurant" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
-          </article>
-          <article class="slide" data-theme="gym" aria-roledescription="slide" aria-label="4 / 4">
-            <div class="slide-text">
-              <span class="tag" data-i18n="d4.tag">Salle de sport</span>
-              <h3 data-i18n="d4.t">Transformer la curiosité en abonnement</h3>
-              <p data-i18n="d4.p">De l'énergie dès la première seconde, des cours et des tarifs limpides, un essai gratuit mis en avant.</p>
-              <ul data-i18n="d4.l"><li>Planning des cours</li><li>Formules et tarifs</li><li>Inscription à l'essai</li></ul>
-              <a class="btn" href="/demos/gym/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+          </div>
+          <span class="show-url" dir="ltr">chez-olive.be</span>
+        </article>
+        <article class="show-slide" style="--ac:#c8ff2e;--on:#0a0a0a" aria-roledescription="slide" aria-label="4 / 4" aria-hidden="true">
+          <div class="show-bg" style="background-image:url(/demos/photos/gym-hero.jpg)"></div>
+          <div class="show-copy">
+            <span class="show-tag" data-i18n="d4.tag">Salle de sport</span>
+            <h3 data-i18n="d4.t">Transformer la curiosité en abonnement</h3>
+            <p data-i18n="d4.p">De l'énergie dès la première seconde, des cours et des tarifs limpides, un essai gratuit mis en avant.</p>
+            <ul data-i18n="d4.l"><li>Planning des cours</li><li>Formules et tarifs</li><li>Inscription à l'essai</li></ul>
+            <div class="show-cta">
+              <a class="btn show-open" href="/demos/gym/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+              <a class="show-link" href="/#contact" data-i18n="demos.cta">Je veux mon site sur mesure</a>
             </div>
-            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>forge-fitness.be</span></div><div class="frame"><iframe src="/demos/gym/" title="Démo salle de sport" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
-          </article>
+          </div>
+          <span class="show-url" dir="ltr">forge-fitness.be</span>
+        </article>
+          <button type="button" class="show-arrow show-prev" id="show-prev" data-i18n-aria="demos.prev" aria-label="Démo précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button type="button" class="show-arrow show-next" id="show-next" data-i18n-aria="demos.next" aria-label="Démo suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
         </div>
-        <div class="slider-ui">
-          <button type="button" class="arrow" id="prev" data-i18n-aria="demos.prev" aria-label="Démo précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-          <div class="dots" id="dots"></div>
-          <button type="button" class="arrow" id="next" data-i18n-aria="demos.next" aria-label="Démo suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-        </div>
+        <div class="show-tabs" id="show-tabs"><button type="button" class="show-tab is-on" data-i="0" aria-label="1 / 4"><span class="show-tab-t" data-i18n="d1.tag">Garage & mécanique</span><i><b></b></i></button><button type="button" class="show-tab" data-i="1" aria-label="2 / 4"><span class="show-tab-t" data-i18n="d2.tag">Salon & institut de beauté</span><i><b></b></i></button><button type="button" class="show-tab" data-i="2" aria-label="3 / 4"><span class="show-tab-t" data-i18n="d3.tag">Restaurant</span><i><b></b></i></button><button type="button" class="show-tab" data-i="3" aria-label="4 / 4"><span class="show-tab-t" data-i18n="d4.tag">Salle de sport</span><i><b></b></i></button><button type="button" class="show-pause" id="show-pause" aria-label="Pause"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l11-7-7-7Z"/></svg></button></div>
       </div>
-      <p class="center-link"><a href="/#contact" class="btn" data-i18n="demos.cta">Je veux mon site sur mesure</a></p>
-    </div>
+      </div>
 </section>
 
 </main>
@@ -190,7 +203,7 @@
 
 <script src="assets/vendor/motion.js"></script>
 <script src="fx.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=5"></script>
 
 </body>
 </html>
