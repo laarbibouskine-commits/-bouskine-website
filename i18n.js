@@ -23,6 +23,12 @@
     },
 
     en: {
+      "mega.title": "Websites designed to inspire, reassure and get people to book",
+      "dm1.p": "Online booking, clear quotes, transparent prices.",
+      "dm2.p": "Elegant treatment menu and booking in one tap.",
+      "dm3.p": "A menu that makes you hungry, table booking in 10 seconds.",
+      "dm4.p": "Classes, clear prices and a free trial up front.",
+      "demos.all": "See all demos in full size →",
       "nav.demos": "Website demos",
       "s3.demo": "See demos: garage, salon, restaurant, gym →",
       "demos.title": "Your website, before you even order",
@@ -182,6 +188,12 @@
     },
 
     nl: {
+      "mega.title": "Websites die inspireren, geruststellen en laten reserveren",
+      "dm1.p": "Online afspraak, duidelijke offertes, transparante prijzen.",
+      "dm2.p": "Elegante behandelkaart en reserveren met één tik.",
+      "dm3.p": "Een menu dat honger geeft, tafel reserveren in 10 seconden.",
+      "dm4.p": "Lessen, heldere prijzen en een gratis proefles vooraan.",
+      "demos.all": "Bekijk alle demo's groot →",
       "meta./.title": "Bouskine Digital Solutions — Automatisering met n8n & AI",
       "meta./.desc": "Bouskine Digital Solutions: automatiseer uw bedrijfsprocessen met n8n en AI, websites, digitale marketing en bedrijfsoplossingen. Automate • Grow • Focus.",
       "meta./a-propos.title": "Over ons — Bouskine Digital Solutions",
@@ -342,6 +354,12 @@
     },
 
     ar: {
+      "mega.title": "مواقع مصممة لتُلهم الزائر وتطمئنه وتدفعه إلى الحجز",
+      "dm1.p": "حجز موعد عبر الإنترنت، عروض أسعار واضحة، أسعار شفافة.",
+      "dm2.p": "قائمة علاجات أنيقة وحجز بلمسة واحدة.",
+      "dm3.p": "قائمة طعام تفتح الشهية وحجز طاولة في 10 ثوانٍ.",
+      "dm4.p": "حصص، أسعار واضحة وحصة تجريبية مجانية في الواجهة.",
+      "demos.all": "شاهد كل النماذج بحجم كبير ←",
       "nav.demos": "نماذج مواقع",
       "s3.demo": "شاهد النماذج: ورشة سيارات، صالون، مطعم، قاعة رياضة ←",
       "demos.title": "موقعك، قبل أن تطلبه",

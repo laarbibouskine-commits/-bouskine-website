@@ -127,3 +127,14 @@ form?.addEventListener("submit", async (e) => {
   if ("ResizeObserver" in window) items.forEach((it) => new ResizeObserver(fit).observe(it));
   mark();
 })();
+
+// ===== Mega menu des démos (clic / clavier / tactile) =====
+(() => {
+  const box = document.querySelector(".has-mega");
+  if (!box) return;
+  const btn = box.querySelector(".mega-btn");
+  const set = (open) => { box.classList.toggle("open", open); btn.setAttribute("aria-expanded", String(open)); };
+  btn.addEventListener("click", (e) => { e.stopPropagation(); set(!box.classList.contains("open")); });
+  document.addEventListener("click", (e) => { if (!box.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { set(false); btn.focus(); } });
+})();
