@@ -3,7 +3,7 @@
 // Les éléments traduits portent data-i18n (contenu), data-i18n-ph (placeholder) ou data-i18n-aria (aria-label).
 // Les pages de contenu (à propos, légal) utilisent des blocs <div data-lang="fr|en|ar">.
 (function () {
-  const SUPPORTED = ["fr", "en", "ar"];
+  const SUPPORTED = ["fr", "en", "ar", "nl"];
   const WA_NUMBER = "212687184542";
 
   // Pays → langue (quand le visiteur n'a pas encore choisi)
@@ -179,6 +179,166 @@
 
       "wa.aria": "Chat on WhatsApp",
       "wa.msg": "Hello, I'm reaching out from your Bouskine Digital Solutions website.",
+    },
+
+    nl: {
+      "meta./.title": "Bouskine Digital Solutions — Automatisering met n8n & AI",
+      "meta./.desc": "Bouskine Digital Solutions: automatiseer uw bedrijfsprocessen met n8n en AI, websites, digitale marketing en bedrijfsoplossingen. Automate • Grow • Focus.",
+      "meta./a-propos.title": "Over ons — Bouskine Digital Solutions",
+      "meta./confidentialite.title": "Privacybeleid — Bouskine Digital Solutions",
+      "meta./conditions.title": "Gebruiksvoorwaarden — Bouskine Digital Solutions",
+
+      "nav.services": "Diensten",
+      "nav.demos": "Websitedemo's",
+      "nav.projects": "Projecten",
+      "nav.examples": "Voorbeelden",
+      "nav.process": "Werkwijze",
+      "nav.about": "Over ons",
+      "nav.contact": "Contact",
+      "nav.blog": "Blog",
+
+      "hero.title": 'Automatiseer uw bedrijf, <span class="soft">focus op wat telt.</span>',
+      "hero.lead": "Ik help bedrijven en ondernemers tijd te winnen door repetitieve taken te automatiseren met <strong>n8n</strong> en <strong>kunstmatige intelligentie</strong> — leads, e-mails, CRM, WhatsApp, sociale media, facturen en meer.",
+      "hero.cta1": "Vraag een gratis offerte",
+      "hero.cta2": "Bekijk websitedemo's",
+      "hero.stat1": "Automatiseringsexpert",
+      "hero.stat2k": "AI",
+      "hero.stat2": "Agents & chatbots",
+      "hero.stat3": "Uw workflows staan nooit stil",
+
+      "flow.head": "workflow · nieuwe lead",
+      "flow.n1": "Webformulier",
+      "flow.n2": "AI-kwalificatie",
+      "flow.foot": "✓ Lead automatisch verwerkt — geen handmatige invoer",
+
+      "services.title": "Wat ik voor u kan doen",
+      "services.sub": "Digitale oplossingen op maat om uw bedrijf te automatiseren, te laten groeien en te vereenvoudigen.",
+      "s1.t": "Automatisering & AI",
+      "s1.p": "n8n-workflows die uw tools verbinden (Gmail, Google Sheets, CRM, WhatsApp, Slack…) en AI gebruiken om te sorteren, te antwoorden en te beslissen in uw plaats.",
+      "s1.l": "<li>n8n-workflows op maat</li><li>AI-agents & chatbots</li><li>API-koppelingen</li>",
+      "s2.t": "Marketing & sociale media",
+      "s2.p": "Automatisch content publiceren, posts genereren met AI, leads opvolgen en campagnes rapporteren.",
+      "s2.l": "<li>Automatische planning</li><li>Content gemaakt door AI</li><li>Prestatiemonitoring</li>",
+      "s3.t": "Websites & apps",
+      "s3.p": "Moderne, snelle en mobielvriendelijke websites, gekoppeld aan uw automatiseringen (formulieren, reserveringen, betalingen).",
+      "s3.l": "<li>Websites & landingspagina's</li><li>Slimme formulieren</li><li>Hosting & domeinnaam</li>",
+      "s3.demo": "Bekijk demo's: garage, kapsalon, restaurant, sportschool →",
+      "s4.t": "Bedrijfsoplossingen",
+      "s4.p": "Automatisering van uw interne processen: facturatie, opvolging van klanten, orderbeheer, onboarding en dashboards.",
+      "s4.l": "<li>Facturen & herinneringen</li><li>Orderbeheer</li><li>Dashboards & rapporten</li>",
+      "s5.t": "Van idee tot resultaat",
+      "s5.p": "Procesaudit, advies en begeleiding: samen bepalen we wat geautomatiseerd kan worden en zetten we het op.",
+      "s5.l": "<li>Gratis audit</li><li>Advies & strategie</li><li>Opleiding & support</li>",
+
+      "demos.title": "Uw website, nog voor u bestelt",
+      "demos.sub": "Hier zijn vier sites zoals ik ze ontwerp: gemaakt om te inspireren, gerust te stellen en te laten reserveren. Neem een kijkje en vertel me welke bij u past.",
+      "demos.aria": "Websitedemo's",
+      "demos.prev": "Vorige demo",
+      "demos.next": "Volgende demo",
+      "demos.open": "Open de demo",
+      "demos.cta": "Ik wil mijn eigen website op maat",
+      "d1.tag": "Garage & mechanica",
+      "d1.t": "Vertrouwen wekken vóór het eerste bezoek",
+      "d1.p": "Duidelijke offertes, afspraak met één klik, transparante prijzen. Klanten weten aan wie ze hun wagen toevertrouwen.",
+      "d1.l": "<li>Online afspraak maken</li><li>Duidelijke diensten en prijzen</li><li>Rechtstreeks bellen of WhatsApp</li>",
+      "d2.tag": "Schoonheidssalon & spa",
+      "d2.t": "Zin geven in een moment voor zichzelf",
+      "d2.p": "Een zachte sfeer, behandelingen als belofte gepresenteerd, een heldere kaart en reserveren met één tik.",
+      "d2.l": "<li>Elegante behandelkaart</li><li>Reserveren via WhatsApp</li><li>Klantenreviews in de kijker</li>",
+      "d3.tag": "Restaurant",
+      "d3.t": "Het water in de mond laten lopen vóór de bestelling",
+      "d3.p": "Een menu dat verleidt, het verhaal van het huis en een tafel reserveren in tien seconden.",
+      "d3.l": "<li>Menu en dagschotel</li><li>Tafel reserveren</li><li>Openingsuren en route in één oogopslag</li>",
+      "d4.tag": "Sportschool",
+      "d4.t": "Nieuwsgierigheid omzetten in lidmaatschappen",
+      "d4.p": "Energie vanaf de eerste seconde, duidelijke lessen en prijzen, een gratis proefles op de voorgrond.",
+      "d4.l": "<li>Lesrooster</li><li>Formules en prijzen</li><li>Inschrijven voor de proefles</li>",
+
+      "projects.title": "n8n-workflows in productie",
+      "projects.sub": "Enkele automatiseringen die ik heb ontworpen en die elke dag draaien.",
+      "p1.aria": "Video van de n8n-workflow voor automatisch posten",
+      "p1.t": "Automatisch posten op Facebook & Instagram",
+      "p1.p": "Elke dag op een vast uur kiest de workflow een doelgroep, analyseert trending hashtags op Instagram, genereert een afbeelding met AI, schrijft de post en publiceert die automatisch op de Facebook-pagina en het Instagram-account — en stuurt daarna een WhatsApp-melding.",
+      "p2.aria": "Video van de n8n-workflow voor leadgeneratie",
+      "p2.tag": "Prospectie & leads",
+      "p2.t": "Automatische B2B-leadgeneratie",
+      "p2.p": "Elke maandag zoekt de workflow gerichte bedrijven op Google Maps in meerdere steden, voegt de resultaten samen en kwalificeert ze, sluit bekende leads uit, en AI schrijft voor elk een gepersonaliseerd bericht. Nieuwe leads worden in de database opgeslagen en een weekoverzicht gaat per e-mail.",
+      "p3.aria": "Schema van de workflow: een manager-agent stuurt 7 AI-agents aan, daarna wordt het artikel geschreven, geïllustreerd, op WordPress gepubliceerd en met Rank Math geoptimaliseerd",
+      "p3.n1": "AI-agent",
+      "p3.n2": "Schrijven",
+      "p3.n3t": "Uitgelichte afbeelding",
+      "p3.n3": "AI-generatie",
+      "p3.n4": "Publicatie",
+      "p3.agents": "<span>🔎 Zoekwoorden</span><span>🕵️ Concurrenten</span><span>🌐 Perplexity</span><span>🏷️ Titels</span><span>📝 Beschrijvingen</span><span>🔗 Interne links</span><span>🎨 Gemini</span>",
+      "p3.t": "AI-agent voor SEO-blogs op WordPress",
+      "p3.p": "Een team van AI-agents dat zoekwoorden onderzoekt, artikels van concurrenten analyseert, het artikel schrijft, de uitgelichte afbeelding maakt, interne links toevoegt en publiceert op WordPress met geoptimaliseerde Rank Math-SEO.",
+      "p3.stack": "AI-agents",
+
+      "ex.title": "Automatiseringen die ik bouw",
+      "ex.sub": "Concrete voorbeelden van workflows die elke week uren besparen.",
+      "u1.t": "Automatische WhatsApp-antwoorden",
+      "u1.p": "Elk nieuw bericht krijgt meteen een AI-antwoord en de lead wordt in uw CRM bewaard.",
+      "u2.t": "Leads verzamelen & kwalificeren",
+      "u2.p": "Formulier → AI-kwalificatie → Google Sheets / CRM → melding aan uw team.",
+      "u3.t": "Automatische facturatie",
+      "u3.p": "Pdf-facturen worden gemaakt en gemaild, onbetaalde facturen automatisch opgevolgd.",
+      "u4.t": "Publiceren op sociale media",
+      "u4.p": "Posts gemaakt met AI, gepland en gepubliceerd op Facebook, Instagram en LinkedIn.",
+      "u5.t": "Slim sorteren van e-mails",
+      "u5.p": "AI leest, sorteert en beantwoordt eenvoudige e-mails en waarschuwt u enkel voor wat telt.",
+      "u6.t": "Automatische rapporten",
+      "u6.p": "Elke ochtend een overzicht van uw verkoop en cijfers per e-mail of WhatsApp.",
+
+      "process.title": "Zo werken we samen",
+      "st1.t": "Kennismaking",
+      "st1.p": "We bespreken uw activiteit en de taken die u veel tijd kosten.",
+      "st2.t": "Voorstel",
+      "st2.p": "Ik stel een duidelijke oplossing voor, met vaste termijn en prijs.",
+      "st3.t": "Bouwen",
+      "st3.p": "Ik bouw en test uw workflows met uw echte tools.",
+      "st4.t": "Oplevering & opvolging",
+      "st4.p": "Livegang, opleiding en support na oplevering.",
+
+      "about.name": "Laarbi Bouskine",
+      "about.role": "Oprichter van Bouskine Digital Solutions · Specialist in n8n- en AI-automatisering",
+      "about.p": "Gepassioneerd door automatisering en kunstmatige intelligentie help ik bedrijven zich te bevrijden van repetitieve taken, zodat ze zich op groei kunnen richten. Elke workflow die ik bouw is eenvoudig, betrouwbaar en rendabel.",
+      "about.more": "Meer weten →",
+
+      "contact.title": "Laten we over uw project praten",
+      "contact.sub": "Vertel me wat u wilt automatiseren en ik antwoord snel met een voorstel.",
+      "form.name": "Naam",
+      "form.service": "Dienst",
+      "form.other": "Andere",
+      "form.message": "Bericht",
+      "form.ph": "Bv. ik wil mijn klanten automatisch antwoorden op WhatsApp…",
+      "form.send": "Bericht versturen",
+      "form.sending": "Bezig met verzenden…",
+      "form.ok": "Bedankt! Uw bericht is verzonden. Ik antwoord u zeer snel.",
+      "form.err": "Oeps, er ging iets mis. Mail me rechtstreeks op {email}.",
+
+      "footer.tag": "n8n- en AI-automatisering voor bedrijven.",
+      "footer.nav": "Navigatie",
+      "footer.company": "Bedrijf",
+      "footer.privacy": "Privacybeleid",
+      "footer.terms": "Gebruiksvoorwaarden",
+      "footer.loc": "Marokko · Klanten wereldwijd",
+      "footer.rights": "Alle rechten voorbehouden.",
+      "footer.privacyShort": "Privacy",
+      "footer.termsShort": "Voorwaarden",
+
+      "blog.title": "Gidsen & tutorials",
+      "blog.sub": "Hoe ik mijn n8n- en AI-automatiseringen bouw, stap voor stap.",
+      "blog.all": "Alle artikels →",
+      "blog.read": "Lees het artikel →",
+      "b1.t": "Posten op Facebook & Instagram automatiseren met n8n en AI",
+      "b1.p": "Een workflow die de afbeelding maakt, de post schrijft en elke dag op beide platformen publiceert.",
+      "b2.t": "Automatisch B2B-leads genereren met n8n en Google Maps",
+      "b2.p": "Bedrijven vinden, kwalificeren, dubbels verwijderen en voor elk een gepersonaliseerd bericht voorbereiden.",
+      "b3.t": "Een AI-agent bouwen die SEO-artikels schrijft en op WordPress publiceert",
+      "b3.p": "Een team van AI-agents, aangestuurd door n8n, van zoekwoordenonderzoek tot publicatie met Rank Math.",
+
+      "wa.aria": "Chat via WhatsApp",
+      "wa.msg": "Hallo, ik kom van uw website Bouskine Digital Solutions.",
     },
 
     ar: {
@@ -372,7 +532,8 @@
       const fr = remember(el, "aria", el.getAttribute("aria-label"));
       el.setAttribute("aria-label", lang === "fr" ? fr : dict[el.dataset.i18nAria] ?? fr);
     });
-    document.querySelectorAll("[data-lang]").forEach((el) => { el.hidden = el.dataset.lang !== lang; });
+    const blockLang = document.querySelector(`[data-lang="${lang}"]`) ? lang : "fr";
+    document.querySelectorAll("[data-lang]").forEach((el) => { el.hidden = el.dataset.lang !== blockLang; });
     document.querySelectorAll("[data-lang-btn]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.langBtn === lang)));
 
     const text = encodeURIComponent(window.t("wa.msg"));
@@ -400,7 +561,7 @@
     if (isBot) return "fr";
     const browser = (navigator.languages || [navigator.language || ""]).map((l) => l.slice(0, 2).toLowerCase());
     // Une préférence explicite du navigateur pour l'arabe ou le français l'emporte.
-    if (browser[0] === "ar" || browser[0] === "fr") return browser[0];
+    if (["ar", "fr", "nl"].includes(browser[0])) return browser[0];
     let country = null;
     try {
       const res = await fetch("/api/geo", { cache: "no-store" });
@@ -409,6 +570,7 @@
     if (country) {
       if (ARAB_COUNTRIES.includes(country)) return "ar";
       if (FRENCH_COUNTRIES.includes(country)) return "fr";
+      if (country === "NL") return "nl";
       return "en";
     }
     return SUPPORTED.find((l) => browser.includes(l)) || "en";
