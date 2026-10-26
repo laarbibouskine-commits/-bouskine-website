@@ -78,3 +78,52 @@ form?.addEventListener("submit", async (e) => {
     btn.disabled = false;
   }
 });
+
+// ===== Slider de démos =====
+(() => {
+  const slides = document.getElementById("slides");
+  if (!slides) return;
+  const items = [...slides.children];
+  const dots = document.getElementById("dots");
+  items.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", `${i + 1} / ${items.length}`);
+    b.addEventListener("click", () => go(i));
+    dots.appendChild(b);
+  });
+  let cur = 0;
+  const mark = () => [...dots.children].forEach((b, i) => b.setAttribute("aria-current", String(i === cur)));
+  const go = (i) => {
+    cur = (i + items.length) % items.length;
+    slides.scrollTo({ left: items[cur].offsetLeft - slides.offsetLeft, behavior: "smooth" });
+    mark();
+  };
+  document.getElementById("prev").addEventListener("click", () => go(cur - 1));
+  document.getElementById("next").addEventListener("click", () => go(cur + 1));
+  // keep the dots in sync when the visitor swipes
+  let tick;
+  slides.addEventListener("scroll", () => {
+    clearTimeout(tick);
+    tick = setTimeout(() => {
+      const w = items[0].getBoundingClientRect().width + 20;
+      cur = Math.min(items.length - 1, Math.round(Math.abs(slides.scrollLeft) / w));
+      mark();
+    }, 80);
+  }, { passive: true });
+  slides.tabIndex = 0;
+  slides.addEventListener("keydown", (e) => {
+    const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
+    if (e.key === "ArrowRight") go(cur + rtl);
+    if (e.key === "ArrowLeft") go(cur - rtl);
+  });
+
+  // scale each 1280px-wide iframe to the width of its frame
+  const fit = () => document.querySelectorAll(".frame").forEach((f) => {
+    f.firstElementChild.style.transform = `scale(${f.clientWidth / 1280})`;
+  });
+  fit();
+  addEventListener("resize", fit);
+  if ("ResizeObserver" in window) items.forEach((it) => new ResizeObserver(fit).observe(it));
+  mark();
+})();

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garage Delcourt — Mécanique automobile à Charleroi (démo)</title>
+<meta name="description" content="Démo de site pour garage créée par Bouskine Digital Solutions.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e1013">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+:root{--bg:#0e1013;--panel:#161a20;--line:#262c35;--amber:#ffb020;--amber-d:#e39a0f;--ink:#f3efe8;--mut:#a9b0bb;--red:#ff4a3d}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "Public Sans",system-ui,sans-serif}
+::selection{background:var(--amber);color:#111}
+h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.05;text-wrap:balance}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+header.top{position:sticky;top:0;z-index:50;background:rgba(14,16,19,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:900 1.25rem "Archivo",sans-serif;letter-spacing:.02em}
+.logo b{color:var(--amber)}
+.top nav{display:flex;gap:28px;align-items:center;font-weight:500;font-size:.95rem;color:var(--mut)}
+.top nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:#14110a;font:800 .95rem "Archivo",sans-serif;letter-spacing:.02em;text-transform:uppercase;padding:15px 26px;border-radius:6px;transition:transform .25s cubic-bezier(.22,1,.36,1),background .2s}
+.btn:hover{background:#ffc247;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #3a424e}
+.btn.ghost:hover{border-color:var(--amber);background:transparent}
+.btn svg{width:18px;height:18px}
+/* hero */
+.hero{position:relative;padding:92px 0 100px;overflow:hidden;background:radial-gradient(900px 520px at 85% 30%,rgba(255,176,32,.16),transparent 65%),radial-gradient(700px 400px at 0% 100%,rgba(255,74,61,.08),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.2vw,5.2rem);font-weight:900;letter-spacing:-.02em;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:1.15rem;color:var(--mut);max-width:520px;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;color:var(--mut);font-size:.92rem}
+.trust span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--amber);margin-right:9px;vertical-align:middle}
+.gauge{width:min(420px,100%);margin-inline:auto}
+.gauge .needle{transform-origin:200px 200px;transform:rotate(-120deg);animation:sweep 2.6s cubic-bezier(.22,1,.36,1) .4s forwards}
+@keyframes sweep{to{transform:rotate(38deg)}}
+@media (prefers-reduced-motion:reduce){.gauge .needle{animation:none;transform:rotate(38deg)}}
+/* sections */
+section{padding:104px 0}
+.sh{max-width:640px;margin-bottom:56px}
+.sh h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:800;letter-spacing:-.015em;margin-bottom:16px}
+.sh p{color:var(--mut)}
+.svc{list-style:none;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:56px 1.1fr 1.4fr auto;gap:24px;align-items:center;padding:28px 6px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+.svc li:hover{background:var(--panel);padding-inline:20px}
+.svc svg{width:32px;height:32px;stroke:var(--amber);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.45rem;font-weight:800}
+.svc p{color:var(--mut);font-size:.98rem}
+.svc .pr{font:700 .95rem "Archivo",sans-serif;color:var(--amber);white-space:nowrap}
+.note{margin-top:18px;font-size:.85rem;color:#7d8591}
+/* promise */
+.promise{background:var(--panel);border-block:1px solid var(--line)}
+.promise .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.promise h3{font-size:1.15rem;margin-bottom:8px;font-weight:800}
+.promise p{color:var(--mut);font-size:.94rem}
+/* story */
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.story blockquote{font:700 clamp(1.5rem,2.8vw,2.2rem)/1.25 "Archivo",sans-serif;text-wrap:balance}
+.story cite{display:block;margin-top:22px;font:500 .95rem "Public Sans",sans-serif;color:var(--mut);font-style:normal}
+.steps{list-style:none;display:grid;gap:26px}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:18px}
+.steps b{font:900 1.6rem "Archivo",sans-serif;color:var(--amber)}
+.steps h3{font-size:1.15rem;margin-bottom:4px}
+.steps p{color:var(--mut);font-size:.95rem}
+/* contact */
+.contact{background:linear-gradient(180deg,var(--bg),#15120a)}
+.contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}
+.contact h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:900;letter-spacing:-.02em;margin-bottom:18px}
+.hours{width:100%;border-collapse:collapse;margin:24px 0 30px}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.hours td:last-child{text-align:right;color:var(--ink);font-weight:500}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:32px}
+.card h3{font-size:1.2rem;margin-bottom:14px}
+.card p{color:var(--mut);margin-bottom:6px}
+.card .tel{display:block;font:900 1.8rem "Archivo",sans-serif;margin:10px 0 22px}
+footer{padding:36px 0;border-top:1px solid var(--line);color:#7d8591;font-size:.88rem}
+@media (max-width:900px){
+  .hero .wrap,.story .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+  .promise .wrap{grid-template-columns:1fr 1fr}
+  .svc li{grid-template-columns:44px 1fr;gap:6px 16px;padding-block:22px}
+  .svc li p{grid-column:2}.svc .pr{grid-column:2}
+  .top nav a:not(.btn){display:none}
+  section{padding:72px 0}.hero{padding:56px 0 64px}
+  .gauge{width:min(300px,100%)}
+}
+@media (max-width:520px){.promise .wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-oil" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></symbol>
+  <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></symbol>
+  <symbol id="i-diag" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 11h2l1.5-3 3 6 1.5-3H17M9 21h6"/></symbol>
+  <symbol id="i-ac" viewBox="0 0 24 24"><path d="M12 2v20M4.2 7l15.6 10M19.8 7 4.2 17M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5L15.5 10"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+  <a href="#" class="logo">DELCOURT<b>.</b>AUTO</a>
+  <nav><a href="#services">Services</a><a href="#methode">Notre façon de faire</a><a href="#contact">Horaires</a><a href="#contact" class="btn" style="padding:11px 20px;color:#14110a">Rendez-vous</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1 class="rv">Votre voiture vous fait confiance. <em>Faites-nous confiance.</em></h1>
+    <p class="lead rv">Entretien, freins, diagnostic : un garage de quartier où l'on vous explique chaque réparation avant de toucher à la clé. Devis clair, voiture rendue propre.</p>
+    <div class="cta rv">
+      <a class="btn" href="#contact"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Prendre rendez-vous</a>
+      <a class="btn ghost" href="#services">Voir nos services</a>
+    </div>
+    <div class="trust rv"><span>Devis avant travaux</span><span>Garantie 12 mois</span><span>Voiture de courtoisie</span></div>
+  </div>
+  <svg class="gauge rv" viewBox="0 0 400 400" role="img" aria-label="Compte-tours">
+    <defs><radialGradient id="gb" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1b2028"/><stop offset="1" stop-color="#101318"/></radialGradient></defs>
+    <circle cx="200" cy="200" r="190" fill="url(#gb)" stroke="#2a313b" stroke-width="2"/>
+    <circle cx="200" cy="200" r="168" fill="none" stroke="#262c35" stroke-width="1"/>
+    <path d="M70 290 A 150 150 0 1 1 330 290" fill="none" stroke="#2f3742" stroke-width="10" stroke-linecap="round"/>
+    <g stroke="#6b7482" stroke-width="3" stroke-linecap="round">
+      <path d="M200 52v16" transform="rotate(-120 200 200)"/><path d="M200 52v16" transform="rotate(-90 200 200)"/><path d="M200 52v16" transform="rotate(-60 200 200)"/><path d="M200 52v16" transform="rotate(-30 200 200)"/><path d="M200 52v16"/><path d="M200 52v16" transform="rotate(30 200 200)"/><path d="M200 52v16" transform="rotate(60 200 200)"/><path d="M200 52v16" transform="rotate(90 200 200)"/><path d="M200 52v16" transform="rotate(120 200 200)"/>
+    </g>
+    <g stroke="#ff4a3d" stroke-width="5" stroke-linecap="round"><path d="M200 52v18" transform="rotate(90 200 200)"/><path d="M200 52v18" transform="rotate(120 200 200)"/></g>
+    <g class="needle"><path d="M200 200 L196 70 L200 58 L204 70Z" fill="#ffb020"/></g>
+    <circle cx="200" cy="200" r="16" fill="#0e1013" stroke="#ffb020" stroke-width="3"/>
+    <text x="200" y="262" text-anchor="middle" fill="#f3efe8" font-family="Archivo" font-weight="900" font-size="30" letter-spacing="2">DELCOURT</text>
+    <text x="200" y="286" text-anchor="middle" fill="#a9b0bb" font-family="Public Sans" font-size="13" letter-spacing="4">CHARLEROI</text>
+  </svg>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="sh rv"><h2>Tout ce qu'il faut pour rouler l'esprit tranquille.</h2><p>Du simple entretien à la panne qui n'avait pas prévenu : une seule adresse, un interlocuteur qui connaît votre voiture.</p></div>
+  <ul class="svc">
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-oil"/></svg><h3>Entretien &amp; vidange</h3><p>Huile, filtres, niveaux. Carnet d'entretien tamponné, rappel avant la prochaine échéance.</p><span class="pr">dès 89 €</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-brake"/></svg><h3>Freins</h3><p>Plaquettes, disques, liquide. Essai routier systématique avant de vous rendre les clés.</p><span class="pr">dès 119 €</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-diag"/></svg><h3>Diagnostic électronique</h3><p>Voyant allumé ? On lit le défaut, on vous montre le résultat, on vous dit ce qui est urgent.</p><span class="pr">dès 49 €</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-tire"/></svg><h3>Pneus &amp; géométrie</h3><p>Montage, équilibrage, parallélisme. Pneus hiver : prise de rendez-vous en ligne.</p><span class="pr">dès 25 €</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-ac"/></svg><h3>Climatisation</h3><p>Recharge, désinfection, recherche de fuite. Prêt avant les premières chaleurs.</p><span class="pr">dès 79 €</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><h3>Préparation au contrôle technique</h3><p>On contrôle les points sensibles avant le passage, pour y aller sans appréhension.</p><span class="pr">dès 39 €</span></li>
+  </ul>
+  <p class="note">Tarifs indicatifs d'exemple pour cette démo, à remplacer par vos vrais prix.</p>
+</div></section>
+
+<section class="promise"><div class="wrap">
+  <div class="rv"><h3>Devis écrit</h3><p>Vous validez le prix avant que l'on commence. Pas de surprise sur la facture.</p></div>
+  <div class="rv"><h3>Pièces au choix</h3><p>Origine ou équivalent de qualité : on vous explique la différence et le prix.</p></div>
+  <div class="rv"><h3>Voiture de courtoisie</h3><p>Pour que votre journée continue pendant que la vôtre est au garage.</p></div>
+  <div class="rv"><h3>Garantie 12 mois</h3><p>Sur la main-d'œuvre. Si quelque chose cloche, vous revenez, on règle.</p></div>
+</div></section>
+
+<section id="methode" class="story"><div class="wrap">
+  <figure class="rv"><blockquote>« Pour la première fois, un garagiste m'a montré la pièce usée et m'a dit de ne pas la changer tout de suite. »</blockquote><cite>Sophie, cliente depuis 2019 · exemple d'avis</cite></figure>
+  <ol class="steps">
+    <li class="rv"><b>1</b><div><h3>Vous appelez ou réservez en ligne</h3><p>Un créneau en deux minutes, y compris le samedi matin.</p></div></li>
+    <li class="rv"><b>2</b><div><h3>On examine, on vous montre</h3><p>Photos et explications simples, avec le devis avant tout travail.</p></div></li>
+    <li class="rv"><b>3</b><div><h3>Vous repartez serein</h3><p>Voiture lavée, ancienne pièce à disposition, rappel avant la prochaine échéance.</p></div></li>
+  </ol>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="rv">
+    <h2>Un bruit bizarre ? Un voyant ? Passez nous voir.</h2>
+    <p style="color:var(--mut);max-width:480px">On regarde gratuitement les petits soucis et on vous dit honnêtement si c'est grave.</p>
+    <table class="hours" aria-label="Horaires d'ouverture">
+      <tr><td>Lundi – Vendredi</td><td>8h00 – 18h00</td></tr>
+      <tr><td>Samedi</td><td>8h30 – 13h00</td></tr>
+      <tr><td>Dimanche</td><td>Fermé</td></tr>
+    </table>
+  </div>
+  <div class="card rv">
+    <h3>Prendre rendez-vous</h3>
+    <p>Rue de l'Atelier 12, 6000 Charleroi</p>
+    <a class="tel" href="tel:+3270000000">071 00 00 00</a>
+    <a class="btn" href="https://wa.me/212687184542?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9mo%20du%20garage" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg>Écrire sur WhatsApp</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© Garage Delcourt — nom, adresse et prix fictifs, exemple de site réalisé par Bouskine Digital Solutions.</div></footer>
+
+<div class="demobar"><span>Maquette de démonstration</span><a href="/#demos">← Voir les autres démos</a><a href="/#contact">Je veux le même site</a></div>
+<script src="../shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chez Olive — Restaurant méditerranéen (démo)</title>
+<meta name="description" content="Démo de site pour restaurant créée par Bouskine Digital Solutions.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1c2a22">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+:root{--forest:#1a2a21;--forest-2:#223529;--cream:#f6efe1;--paper:#fbf6ea;--terra:#c4602f;--terra-d:#a14a21;--gold:#d9a441;--ink:#2a2118;--mut:#6f6455}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.7 "Karla",system-ui,sans-serif}
+::selection{background:var(--terra);color:#fff}
+h1,h2,h3{font-family:"Fraunces",serif;line-height:1.08;text-wrap:balance}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+header.top{position:absolute;inset:0 0 auto 0;z-index:20;color:var(--cream)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:88px}
+.logo{font:800 1.5rem "Fraunces",serif;letter-spacing:.01em}
+.logo span{color:var(--gold)}
+.top nav{display:flex;gap:30px;align-items:center;font-weight:500}
+.top nav a{opacity:.85}.top nav a:hover{opacity:1}
+.btn{display:inline-block;background:var(--terra);color:#fff;font:700 .95rem "Karla",sans-serif;padding:15px 30px;border-radius:999px;transition:background .2s,transform .3s cubic-bezier(.22,1,.36,1)}
+.btn:hover{background:var(--terra-d);transform:translateY(-2px)}
+.btn.out{background:transparent;border:1.5px solid rgba(246,239,225,.5);color:var(--cream)}
+.btn.out:hover{background:rgba(246,239,225,.1)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;padding:140px 0 90px;color:var(--cream);overflow:hidden;background:radial-gradient(900px 600px at 75% 25%,rgba(217,164,65,.34),transparent 62%),radial-gradient(700px 500px at 10% 90%,rgba(196,96,47,.28),transparent 60%),var(--forest)}
+.hero::after{content:"";position:absolute;right:-12vw;top:50%;translate:0 -50%;width:min(62vw,720px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(246,239,225,.14);box-shadow:inset 0 0 0 38px rgba(246,239,225,.03),inset 0 0 0 39px rgba(246,239,225,.1),inset 0 0 0 110px rgba(217,164,65,.05)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,8vw,7rem);font-weight:600;letter-spacing:-.02em;max-width:900px;margin-bottom:28px}
+.hero h1 i{font-weight:400;color:var(--gold)}
+.hero p{max-width:520px;font-size:1.15rem;opacity:.85;margin-bottom:36px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px}
+.open{display:flex;flex-wrap:wrap;gap:12px 40px;font-size:.95rem;opacity:.8;border-top:1px solid rgba(246,239,225,.2);padding-top:22px}
+.open b{color:var(--gold);font-weight:700;margin-right:6px}
+/* story */
+section{padding:120px 0}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story h2{font-size:clamp(2.1rem,4.2vw,3.4rem);font-weight:600;margin-bottom:24px}
+.story p{color:var(--mut);margin-bottom:16px}
+.story .sign{font:italic 400 1.5rem "Fraunces",serif;color:var(--terra);margin-top:22px}
+.plate{aspect-ratio:1;border-radius:50%;max-width:460px;margin-inline:auto;position:relative;background:radial-gradient(circle at 50% 50%,var(--paper) 0 34%,#ecdfc4 34.5% 35.5%,var(--paper) 36% 100%);box-shadow:0 50px 80px -40px rgba(60,40,10,.5),0 0 0 14px #ebe0c8,0 0 0 15px #d8c9a6}
+.plate::before{content:"";position:absolute;inset:23%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e9a35b,#c4602f 55%,#8c3a15);box-shadow:inset 0 -14px 24px rgba(60,20,5,.4)}
+.plate::after{content:"";position:absolute;left:44%;top:34%;width:22%;height:14%;border-radius:100% 0;rotate:-24deg;background:#5f8a52;box-shadow:30px 38px 0 -3px #6f9a60,-16px 52px 0 -5px #52783f}
+/* menu */
+.menu{background:var(--forest);color:var(--cream)}
+.menu h2{font-size:clamp(2.2rem,4.6vw,3.8rem);font-weight:600;text-align:center;margin-bottom:12px}
+.menu .sub{text-align:center;opacity:.7;margin-bottom:70px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px 90px}
+.cols h3{font-size:1.1rem;font-family:"Karla",sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid rgba(246,239,225,.2)}
+.dish{display:flex;gap:14px;align-items:baseline;margin-bottom:26px}
+.dish>div{flex:1}
+.dish b{font:600 1.35rem "Fraunces",serif;display:block}
+.dish small{opacity:.65;font-size:.93rem}
+.dish i{flex:0 0 auto;font-style:normal;font-weight:700;color:var(--gold)}
+.menu .note{text-align:center;margin-top:30px;font-size:.84rem;opacity:.55}
+/* evening */
+.evening{background:var(--cream);text-align:center}
+.evening h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:600;margin-bottom:18px}
+.evening blockquote{font:italic 400 clamp(1.4rem,2.6vw,2rem)/1.35 "Fraunces",serif;max-width:760px;margin:0 auto 22px;color:var(--forest-2);text-wrap:balance}
+.evening cite{font-style:normal;color:var(--mut);font-size:.9rem}
+.stars{color:var(--gold);letter-spacing:6px;font-size:1.2rem;margin-bottom:16px}
+/* reserve */
+.reserve{background:linear-gradient(135deg,var(--terra),#8f3d17);color:#fff}
+.reserve .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.reserve h2{font-size:clamp(2.2rem,4.6vw,3.8rem);font-weight:600;margin-bottom:16px}
+.reserve p{opacity:.9;max-width:480px}
+.rbox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:34px}
+.rbox .btn{background:var(--cream);color:var(--terra-d);width:100%;text-align:center;margin-top:20px}
+.rbox .btn:hover{background:#fff}
+.rbox p{font-size:.95rem}.rbox a.t{font:600 2rem "Fraunces",serif;display:block;margin-top:6px}
+footer{background:var(--forest);color:rgba(246,239,225,.6);padding:36px 0;font-size:.86rem;text-align:center}
+@media (max-width:900px){
+  .story .wrap,.reserve .wrap,.cols{grid-template-columns:1fr;gap:44px}
+  .top nav a:not(.btn){display:none}
+  .hero::after{opacity:.6;right:-40vw}
+  section{padding:80px 0}.hero{padding-bottom:64px}.plate{max-width:320px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a href="#" class="logo">Chez <span>Olive</span></a><nav><a href="#carte">La carte</a><a href="#reserver" class="btn" style="padding:11px 22px">Réserver</a></nav></div></header>
+<main>
+<section class="hero" style="padding-block:140px 90px"><div class="wrap">
+  <h1 class="rv">La table où l'on <i>reste un peu plus longtemps.</i></h1>
+  <p class="rv">Cuisine méditerranéenne de saison, produits de petits producteurs, feu de bois et grandes tablées. Ici, on prend le temps.</p>
+  <div class="cta rv"><a class="btn" href="#reserver">Réserver une table</a><a class="btn out" href="#carte">Voir la carte</a></div>
+  <div class="open rv"><span><b>Midi</b>Mar – Sam · 12h – 14h30</span><span><b>Soir</b>Mar – Dim · 18h30 – 22h30</span><span><b>Adresse</b>Place du Marché 3, 6000 Charleroi</span></div>
+</div></section>
+
+<section class="story"><div class="wrap">
+  <div class="plate rv" role="img" aria-label="Assiette de saison"></div>
+  <div class="rv"><h2>Une cuisine qui sent bon la maison.</h2>
+    <p>Chaque matin, on va au marché. Chaque soir, on cuisine ce qu'on a trouvé de meilleur : des légumes qui ont du goût, un poisson du jour, de l'huile d'olive qui parfume tout.</p>
+    <p>Pas de chichi. Des assiettes généreuses, une cave choisie avec soin et une équipe qui vous accueille comme à la maison.</p>
+    <p class="sign">— Marc &amp; Leïla</p></div>
+</div></section>
+
+<section id="carte" class="menu"><div class="wrap">
+  <h2 class="rv">La carte du moment</h2><p class="sub rv">Elle change avec les saisons, parfois avec l'humeur du marché.</p>
+  <div class="cols">
+    <div class="rv"><h3>Pour commencer</h3>
+      <div class="dish"><div><b>Burrata, tomates anciennes</b><small>Basilic, huile d'olive, fleur de sel</small></div><i>14</i></div>
+      <div class="dish"><div><b>Houmous maison, pain au feu de bois</b><small>Pois chiches, tahini, paprika fumé</small></div><i>9</i></div>
+      <div class="dish"><div><b>Poulpe grillé</b><small>Pommes de terre, citron confit, persil</small></div><i>16</i></div>
+      <h3 style="margin-top:44px">Desserts</h3>
+      <div class="dish"><div><b>Tarte fine aux figues</b><small>Miel, amandes, glace vanille</small></div><i>9</i></div>
+      <div class="dish"><div><b>Panna cotta, coulis d'agrumes</b><small>Zestes, pistaches</small></div><i>8</i></div>
+    </div>
+    <div class="rv"><h3>Plats</h3>
+      <div class="dish"><div><b>Agneau confit, semoule aux herbes</b><small>Cuisson 7 h, jus à la grenade</small></div><i>26</i></div>
+      <div class="dish"><div><b>Dos de cabillaud, fenouil rôti</b><small>Beurre blanc au safran</small></div><i>24</i></div>
+      <div class="dish"><div><b>Risotto aux champignons</b><small>Parmesan, huile de truffe, noisettes</small></div><i>21</i></div>
+      <div class="dish"><div><b>Tagine de légumes d'automne</b><small>Abricots secs, amandes, coriandre</small></div><i>19</i></div>
+      <h3 style="margin-top:44px">Menu du midi</h3>
+      <div class="dish"><div><b>Entrée + plat ou plat + dessert</b><small>Du mardi au vendredi</small></div><i>19</i></div>
+    </div>
+  </div>
+  <p class="note">Carte et prix d'exemple pour cette démo, à remplacer par les vôtres.</p>
+</div></section>
+
+<section class="evening"><div class="wrap rv"><div class="stars" aria-label="5 étoiles">★★★★★</div><blockquote>« On est venus pour dîner, on est repartis avec l'envie de revenir dimanche. L'agneau, c'est un souvenir. »</blockquote><cite>Nadia &amp; Thomas · exemple d'avis</cite></div></section>
+
+<section id="reserver" class="reserve"><div class="wrap">
+  <div class="rv"><h2>Gardez-nous une place à votre table.</h2><p>Réservez en ligne en dix secondes, ou écrivez-nous pour un anniversaire, un repas d'équipe, une grande tablée.</p></div>
+  <div class="rbox rv"><p>Réservations</p><a class="t" href="tel:+3270000000">071 00 00 00</a><a class="btn" href="https://wa.me/212687184542?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9mo%20du%20restaurant">Réserver sur WhatsApp</a></div>
+</div></section>
+</main>
+<footer>© Chez Olive — nom, adresse et prix fictifs, exemple de site réalisé par Bouskine Digital Solutions.</footer>
+<div class="demobar"><span>Maquette de démonstration</span><a href="/#demos">← Voir les autres démos</a><a href="/#contact">Je veux le même site</a></div>
+<script src="../shared.js"></script>
+</body>
+</html>

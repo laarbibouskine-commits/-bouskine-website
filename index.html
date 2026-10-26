@@ -38,6 +38,7 @@
     </button>
     <nav class="links">
       <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#demos" data-i18n="nav.demos">Démos sites web</a>
       <a href="#projets" data-i18n="nav.projects">Réalisations</a>
       <a href="#process" data-i18n="nav.process">Méthode</a>
       <a href="/a-propos" data-i18n="nav.about">À propos</a>
@@ -55,16 +56,13 @@
 <main>
   <!-- HERO -->
   <section class="hero">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
     <div class="container hero-grid">
       <div class="hero-text reveal">
-        <p class="eyebrow">Automate • Grow • Focus</p>
-        <h1 data-i18n="hero.title">Automatisez votre business, <span class="grad">concentrez-vous sur l'essentiel.</span></h1>
+        <h1 data-i18n="hero.title">Automatisez votre business, <span class="soft">concentrez-vous sur l'essentiel.</span></h1>
         <p class="lead" data-i18n="hero.lead">J'aide les entreprises et entrepreneurs à gagner du temps en automatisant leurs tâches répétitives avec <strong>n8n</strong> et l'<strong>intelligence artificielle</strong> — leads, emails, CRM, WhatsApp, réseaux sociaux, factures et plus encore.</p>
         <div class="cta-row">
           <a href="#contact" class="btn" data-i18n="hero.cta1">Demander un devis gratuit</a>
-          <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Voir mes services</a>
+          <a href="#demos" class="btn btn-ghost" data-i18n="hero.cta2">Voir les démos de sites</a>
         </div>
         <ul class="hero-stats">
           <li><strong>n8n</strong><span data-i18n="hero.stat1">Expert automatisation</span></li>
@@ -76,14 +74,14 @@
         <div class="flow-card">
           <div class="flow-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><em data-i18n="flow.head">workflow · nouveau lead</em></div>
           <div class="flow">
-            <div class="node"><i>⚡</i><span data-i18n="flow.n1">Formulaire web</span></div>
+            <div class="node"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span data-i18n="flow.n1">Formulaire web</span></div>
             <div class="wire"></div>
-            <div class="node"><i>🤖</i><span data-i18n="flow.n2">Qualification IA</span></div>
+            <div class="node"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></svg><span data-i18n="flow.n2">Qualification IA</span></div>
             <div class="wire"></div>
             <div class="node split">
-              <div><i>📊</i><span>CRM</span></div>
-              <div><i>💬</i><span>WhatsApp</span></div>
-              <div><i>✉️</i><span>Email</span></div>
+              <div><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>CRM</span></div>
+              <div><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg><span>WhatsApp</span></div>
+              <div><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span></div>
             </div>
           </div>
           <div class="flow-foot" data-i18n="flow.foot">✓ Lead traité automatiquement — aucune saisie manuelle</div>
@@ -96,50 +94,104 @@
   <section id="services" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="nav.services">Services</p>
         <h2 data-i18n="services.title">Ce que je peux faire pour vous</h2>
         <p data-i18n="services.sub">Des solutions digitales sur mesure pour automatiser, développer et simplifier votre activité.</p>
       </div>
-      <div class="cards">
-        <article class="card featured reveal">
-          <div class="icon">⚙️</div>
-          <h3 data-i18n="s1.t">Automatisation & IA</h3>
-          <p data-i18n="s1.p">Création de workflows n8n qui connectent vos outils (Gmail, Google Sheets, CRM, WhatsApp, Slack…) et intègrent l'IA pour trier, répondre et décider à votre place.</p>
-          <ul data-i18n="s1.l"><li>Workflows n8n sur mesure</li><li>Agents IA & chatbots</li><li>Intégrations API</li></ul>
-        </article>
-        <article class="card reveal">
-          <div class="icon">📈</div>
-          <h3 data-i18n="s2.t">Marketing & Réseaux sociaux</h3>
-          <p data-i18n="s2.p">Publication automatique de contenu, génération de posts avec l'IA, suivi des leads et reporting de vos campagnes.</p>
-          <ul data-i18n="s2.l"><li>Planification automatique</li><li>Contenu généré par IA</li><li>Suivi des performances</li></ul>
-        </article>
-        <article class="card reveal">
-          <div class="icon">💻</div>
+      <div class="svc-list">
+        <article class="svc-row reveal">
           <h3 data-i18n="s3.t">Sites web & Apps</h3>
-          <p data-i18n="s3.p">Sites vitrines modernes, rapides et adaptés au mobile, connectés à vos automatisations (formulaires, réservations, paiements).</p>
+          <div><p data-i18n="s3.p">Sites vitrines modernes, rapides et adaptés au mobile, connectés à vos automatisations (formulaires, réservations, paiements).</p>
           <ul data-i18n="s3.l"><li>Sites vitrines & landing pages</li><li>Formulaires intelligents</li><li>Hébergement & domaine</li></ul>
+          <a href="#demos" class="more-link" data-i18n="s3.demo">Voir des démos : garage, salon, restaurant, salle de sport →</a></div>
         </article>
-        <article class="card reveal">
-          <div class="icon">👥</div>
+        <article class="svc-row reveal">
+          <h3 data-i18n="s1.t">Automatisation & IA</h3>
+          <div><p data-i18n="s1.p">Création de workflows n8n qui connectent vos outils (Gmail, Google Sheets, CRM, WhatsApp, Slack…) et intègrent l'IA pour trier, répondre et décider à votre place.</p>
+          <ul data-i18n="s1.l"><li>Workflows n8n sur mesure</li><li>Agents IA & chatbots</li><li>Intégrations API</li></ul></div>
+        </article>
+        <article class="svc-row reveal">
+          <h3 data-i18n="s2.t">Marketing & Réseaux sociaux</h3>
+          <div><p data-i18n="s2.p">Publication automatique de contenu, génération de posts avec l'IA, suivi des leads et reporting de vos campagnes.</p>
+          <ul data-i18n="s2.l"><li>Planification automatique</li><li>Contenu généré par IA</li><li>Suivi des performances</li></ul></div>
+        </article>
+        <article class="svc-row reveal">
           <h3 data-i18n="s4.t">Solutions Business</h3>
-          <p data-i18n="s4.p">Automatisation de vos processus internes : facturation, relances clients, gestion des commandes, onboarding et tableaux de bord.</p>
-          <ul data-i18n="s4.l"><li>Factures & relances</li><li>Gestion des commandes</li><li>Dashboards & rapports</li></ul>
+          <div><p data-i18n="s4.p">Automatisation de vos processus internes : facturation, relances clients, gestion des commandes, onboarding et tableaux de bord.</p>
+          <ul data-i18n="s4.l"><li>Factures & relances</li><li>Gestion des commandes</li><li>Dashboards & rapports</li></ul></div>
         </article>
-        <article class="card reveal">
-          <div class="icon">💡</div>
+        <article class="svc-row reveal">
           <h3 data-i18n="s5.t">Des idées aux résultats</h3>
-          <p data-i18n="s5.p">Audit de vos process, conseil et accompagnement : on identifie ensemble ce qui peut être automatisé et on le met en place.</p>
-          <ul data-i18n="s5.l"><li>Audit gratuit</li><li>Conseil & stratégie</li><li>Formation & support</li></ul>
+          <div><p data-i18n="s5.p">Audit de vos process, conseil et accompagnement : on identifie ensemble ce qui peut être automatisé et on le met en place.</p>
+          <ul data-i18n="s5.l"><li>Audit gratuit</li><li>Conseil & stratégie</li><li>Formation & support</li></ul></div>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- DEMOS -->
+  <section id="demos" class="section demos">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 data-i18n="demos.title">Votre site, avant même de commander</h2>
+        <p data-i18n="demos.sub">Voici quatre sites comme je les conçois : pensés pour donner envie, rassurer et faire réserver. Parcourez-les, puis dites-moi lequel vous ressemble.</p>
+      </div>
+      <div class="slider reveal" id="slider" role="region" aria-roledescription="carousel" data-i18n-aria="demos.aria" aria-label="Démos de sites web">
+        <div class="slides" id="slides">
+          <article class="slide" data-theme="garage" aria-roledescription="slide" aria-label="1 / 4">
+            <div class="slide-text">
+              <span class="tag" data-i18n="d1.tag">Garage & mécanique</span>
+              <h3 data-i18n="d1.t">Inspirer confiance avant même la première visite</h3>
+              <p data-i18n="d1.p">Devis clair, prise de rendez-vous en un clic, tarifs transparents. Le client sait à qui il confie sa voiture.</p>
+              <ul data-i18n="d1.l"><li>Rendez-vous en ligne</li><li>Services et tarifs lisibles</li><li>Appel et WhatsApp directs</li></ul>
+              <a class="btn" href="/demos/garage/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+            </div>
+            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>garage-delcourt.be</span></div><div class="frame"><iframe src="/demos/garage/" title="Démo garage" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
+          </article>
+          <article class="slide" data-theme="salon" aria-roledescription="slide" aria-label="2 / 4">
+            <div class="slide-text">
+              <span class="tag" data-i18n="d2.tag">Salon & institut de beauté</span>
+              <h3 data-i18n="d2.t">Donner envie de réserver un moment pour soi</h3>
+              <p data-i18n="d2.p">Une ambiance douce, des soins présentés comme des promesses, une carte claire et la réservation à portée de pouce.</p>
+              <ul data-i18n="d2.l"><li>Carte des soins élégante</li><li>Réservation WhatsApp</li><li>Avis clients mis en valeur</li></ul>
+              <a class="btn" href="/demos/salon/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+            </div>
+            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>maison-eclat.be</span></div><div class="frame"><iframe src="/demos/salon/" title="Démo salon de beauté" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
+          </article>
+          <article class="slide" data-theme="resto" aria-roledescription="slide" aria-label="3 / 4">
+            <div class="slide-text">
+              <span class="tag" data-i18n="d3.tag">Restaurant</span>
+              <h3 data-i18n="d3.t">Faire saliver avant de passer commande</h3>
+              <p data-i18n="d3.p">Une carte qui met l'eau à la bouche, l'histoire de la maison et une réservation en dix secondes.</p>
+              <ul data-i18n="d3.l"><li>Carte et menu du jour</li><li>Réservation de table</li><li>Horaires et accès immédiats</li></ul>
+              <a class="btn" href="/demos/restaurant/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+            </div>
+            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>chez-olive.be</span></div><div class="frame"><iframe src="/demos/restaurant/" title="Démo restaurant" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
+          </article>
+          <article class="slide" data-theme="gym" aria-roledescription="slide" aria-label="4 / 4">
+            <div class="slide-text">
+              <span class="tag" data-i18n="d4.tag">Salle de sport</span>
+              <h3 data-i18n="d4.t">Transformer la curiosité en abonnement</h3>
+              <p data-i18n="d4.p">De l'énergie dès la première seconde, des cours et des tarifs limpides, un essai gratuit mis en avant.</p>
+              <ul data-i18n="d4.l"><li>Planning des cours</li><li>Formules et tarifs</li><li>Inscription à l'essai</li></ul>
+              <a class="btn" href="/demos/gym/" target="_blank" rel="noopener" data-i18n="demos.open">Ouvrir la démo</a>
+            </div>
+            <div class="device"><div class="chrome"><i></i><i></i><i></i><span>forge-fitness.be</span></div><div class="frame"><iframe src="/demos/gym/" title="Démo salle de sport" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></div>
+          </article>
+        </div>
+        <div class="slider-ui">
+          <button type="button" class="arrow" id="prev" data-i18n-aria="demos.prev" aria-label="Démo précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <div class="dots" id="dots"></div>
+          <button type="button" class="arrow" id="next" data-i18n-aria="demos.next" aria-label="Démo suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <p class="center-link"><a href="#contact" class="btn" data-i18n="demos.cta">Je veux mon site sur mesure</a></p>
+    </div>
+</section>
+
   <!-- PROJETS -->
   <section id="projets" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="nav.projects">Réalisations</p>
         <h2 data-i18n="projects.title">Des workflows n8n en production</h2>
         <p data-i18n="projects.sub">Quelques automatisations que j'ai conçues et qui tournent tous les jours.</p>
       </div>
@@ -169,15 +221,15 @@
         <article class="project reveal">
           <div class="project-media canvas" role="img" data-i18n-aria="p3.aria" aria-label="Schéma du workflow : un agent manager coordonne 7 agents IA, puis l'article est rédigé, illustré, publié sur WordPress et optimisé avec Rank Math">
             <div class="pipeline">
-              <div class="pnode main"><i>🤖</i><span>Blog Manager</span><small data-i18n="p3.n1">Agent IA</small></div>
+              <div class="pnode main"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></svg><span>Blog Manager</span><small data-i18n="p3.n1">Agent IA</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>✍️</i><span>Article Writer</span><small data-i18n="p3.n2">Rédaction</small></div>
+              <div class="pnode"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/></svg><span>Article Writer</span><small data-i18n="p3.n2">Rédaction</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>🖼️</i><span data-i18n="p3.n3t">Image à la une</span><small data-i18n="p3.n3">Génération IA</small></div>
+              <div class="pnode"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg><span data-i18n="p3.n3t">Image à la une</span><small data-i18n="p3.n3">Génération IA</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>📰</i><span>WordPress</span><small data-i18n="p3.n4">Publication</small></div>
+              <div class="pnode"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11v16H7a2 2 0 0 1-2-2V4Zm11 4h3v10a2 2 0 0 1-2 2M8 8h5M8 12h5"/></svg><span>WordPress</span><small data-i18n="p3.n4">Publication</small></div>
               <div class="pwire"></div>
-              <div class="pnode"><i>📈</i><span>Rank Math</span><small>SEO</small></div>
+              <div class="pnode"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 6-6 4 4 8-9M15 6h6v6"/></svg><span>Rank Math</span><small>SEO</small></div>
             </div>
             <div class="agents" data-i18n="p3.agents">
               <span>🔎 Keywords</span><span>🕵️ Concurrents</span><span>🌐 Perplexity</span><span>🏷️ Titres</span><span>📝 Descriptions</span><span>🔗 Liens internes</span><span>🎨 Gemini</span>
@@ -198,17 +250,16 @@
   <section id="automations" class="section alt">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="nav.examples">Exemples</p>
         <h2 data-i18n="ex.title">Automatisations que je construis</h2>
         <p data-i18n="ex.sub">Quelques exemples concrets de workflows qui font gagner des heures chaque semaine.</p>
       </div>
       <div class="usecases">
-        <div class="usecase reveal"><h4 data-i18n="u1.t">💬 Réponse WhatsApp automatique</h4><p data-i18n="u1.p">Chaque nouveau message reçoit une réponse IA instantanée, et le lead est enregistré dans votre CRM.</p></div>
-        <div class="usecase reveal"><h4 data-i18n="u2.t">📥 Capture & qualification de leads</h4><p data-i18n="u2.p">Formulaire → qualification par IA → Google Sheets / CRM → notification à votre équipe.</p></div>
-        <div class="usecase reveal"><h4 data-i18n="u3.t">🧾 Facturation automatique</h4><p data-i18n="u3.p">Génération des factures PDF, envoi par email et relance automatique des impayés.</p></div>
-        <div class="usecase reveal"><h4 data-i18n="u4.t">📱 Publication réseaux sociaux</h4><p data-i18n="u4.p">Création de posts avec l'IA et publication programmée sur Facebook, Instagram et LinkedIn.</p></div>
-        <div class="usecase reveal"><h4 data-i18n="u5.t">📧 Tri intelligent des emails</h4><p data-i18n="u5.p">L'IA lit, classe et répond aux emails simples, et vous alerte seulement pour l'important.</p></div>
-        <div class="usecase reveal"><h4 data-i18n="u6.t">📊 Rapports automatiques</h4><p data-i18n="u6.p">Un résumé de vos ventes et statistiques envoyé chaque matin par email ou WhatsApp.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u1.t">Réponse WhatsApp automatique</h4><p data-i18n="u1.p">Chaque nouveau message reçoit une réponse IA instantanée, et le lead est enregistré dans votre CRM.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u2.t">Capture & qualification de leads</h4><p data-i18n="u2.p">Formulaire → qualification par IA → Google Sheets / CRM → notification à votre équipe.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u3.t">Facturation automatique</h4><p data-i18n="u3.p">Génération des factures PDF, envoi par email et relance automatique des impayés.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u4.t">Publication réseaux sociaux</h4><p data-i18n="u4.p">Création de posts avec l'IA et publication programmée sur Facebook, Instagram et LinkedIn.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u5.t">Tri intelligent des emails</h4><p data-i18n="u5.p">L'IA lit, classe et répond aux emails simples, et vous alerte seulement pour l'important.</p></div>
+        <div class="usecase reveal"><h4 data-i18n="u6.t">Rapports automatiques</h4><p data-i18n="u6.p">Un résumé de vos ventes et statistiques envoyé chaque matin par email ou WhatsApp.</p></div>
       </div>
     </div>
   </section>
@@ -217,7 +268,6 @@
   <section id="process" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="nav.process">Méthode</p>
         <h2 data-i18n="process.title">Comment on travaille ensemble</h2>
       </div>
       <ol class="steps">
@@ -236,7 +286,6 @@
         <img src="assets/logo-full.jpg" alt="Bouskine Digital Solutions" width="352" height="353" loading="lazy">
       </div>
       <div class="about-text reveal">
-        <p class="eyebrow" data-i18n="nav.about">À propos</p>
         <h2 data-i18n="about.name">Laarbi Bouskine</h2>
         <p class="role" data-i18n="about.role">Fondateur de Bouskine Digital Solutions · Spécialiste automatisation n8n & IA</p>
         <p data-i18n="about.p">Passionné par l'automatisation et l'intelligence artificielle, j'aide les entreprises à se libérer des tâches répétitives pour se concentrer sur leur croissance. Chaque workflow que je construis est pensé pour être simple, fiable et rentable.</p>
@@ -250,7 +299,6 @@
   <section id="blog" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="nav.blog">Blog</p>
         <h2 data-i18n="blog.title">Guides & tutoriels</h2>
         <p data-i18n="blog.sub">Comment je construis mes automatisations n8n et IA, étape par étape.</p>
       </div>
@@ -282,7 +330,6 @@
   <section id="contact" class="section contact-section">
     <div class="container contact">
       <div class="contact-info reveal">
-        <p class="eyebrow" data-i18n="nav.contact">Contact</p>
         <h2 data-i18n="contact.title">Parlons de votre projet</h2>
         <p data-i18n="contact.sub">Décrivez-moi ce que vous voulez automatiser, je vous réponds rapidement avec une proposition.</p>
         <ul class="contact-list">
