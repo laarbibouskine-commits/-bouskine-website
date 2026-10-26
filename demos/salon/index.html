@@ -33,7 +33,8 @@ header.top{position:absolute;inset:0 0 auto 0;z-index:20}
 .hero h1 i{font-weight:400;color:var(--rose-d)}
 .hero p{max-width:480px;color:var(--mut);font-size:1.1rem;margin-bottom:38px}
 .cta{display:flex;flex-wrap:wrap;gap:14px}
-.arch{position:relative;width:min(400px,86%);margin-inline:auto;aspect-ratio:3/4.1}
+.arch{position:relative;width:min(420px,88%);margin-inline:auto;aspect-ratio:3/4.1}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% center;border-radius:999px 999px 24px 24px;box-shadow:0 40px 70px -30px rgba(120,60,50,.5)}
 .arch .a1,.arch .a2,.arch .a3{position:absolute;border-radius:999px 999px 24px 24px}
 .arch .a1{inset:0;background:linear-gradient(180deg,#e9bfb3,#d99f93 70%,#c98f86);box-shadow:0 40px 70px -30px rgba(120,60,50,.45)}
 .arch .a2{inset:9% 9% 0 9%;background:linear-gradient(180deg,#f6e2d8,#f0cdc1);opacity:.9}
@@ -70,7 +71,7 @@ section{padding:120px 0}
 .menu small{display:block;color:var(--mut);font-size:.88rem;font-weight:300}
 .note{margin-top:20px;font-size:.84rem;color:var(--mut)}
 /* testimonial */
-.quote{background:var(--plum);color:#f8eae4;text-align:center}
+.quote{background:linear-gradient(rgba(58,34,48,.84),rgba(58,34,48,.9)),url(../photos/salon-massage.jpg) center/cover;color:#f8eae4;text-align:center;padding-block:150px}
 .quote blockquote{font:italic 400 clamp(1.8rem,3.8vw,3rem)/1.25 "Cormorant Garamond",serif;max-width:860px;margin:0 auto 26px;text-wrap:balance}
 .quote cite{font-style:normal;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;opacity:.7}
 /* contact */
@@ -99,9 +100,8 @@ footer{padding:34px 0;text-align:center;font-size:.85rem;color:var(--mut)}
     <p class="rv">Un institut calme, lumineux, où le temps ralentit. Soins du visage, massages et beauté des mains, avec des produits choisis pour votre peau.</p>
     <div class="cta rv"><a class="btn" href="#contact">Réserver un soin</a><a class="btn line" href="#soins">Découvrir les soins</a></div>
   </div>
-  <div class="arch rv" aria-hidden="true">
-    <div class="a1"></div><div class="a2"></div><div class="a3"></div><div class="sun"></div>
-    <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M50 118V50"/><path d="M50 78c-18-2-26-16-24-32 16 2 26 14 24 32Z"/><path d="M50 62c16-2 24-14 22-28-14 2-24 12-22 28Z"/><path d="M50 50c-8-6-10-16-6-26 8 6 10 16 6 26Z"/></svg>
+  <div class="arch rv">
+    <img src="../photos/salon-hero.jpg" alt="Soin du visage dans un institut lumineux">
     <div class="badge"><b>4,9 / 5</b>sur 212 avis (exemple)</div>
   </div>
 </div></section>

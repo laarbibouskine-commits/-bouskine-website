@@ -29,8 +29,9 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(14,16,19,.88);backdr
 .btn.ghost:hover{border-color:var(--amber);background:transparent}
 .btn svg{width:18px;height:18px}
 /* hero */
-.hero{position:relative;padding:92px 0 100px;overflow:hidden;background:radial-gradient(900px 520px at 85% 30%,rgba(255,176,32,.16),transparent 65%),radial-gradient(700px 400px at 0% 100%,rgba(255,74,61,.08),transparent 60%)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero{position:relative;padding:120px 0 128px;overflow:hidden;background:linear-gradient(90deg,#0e1013 24%,rgba(14,16,19,.72) 52%,rgba(14,16,19,.2) 100%),url(../photos/garage-hero.jpg) 78% center/cover no-repeat,#0e1013}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,var(--bg))}
+.hero .wrap{position:relative;z-index:2;max-width:1180px}.hero .wrap>div{max-width:600px}
 .hero h1{font-size:clamp(2.6rem,6.2vw,5.2rem);font-weight:900;letter-spacing:-.02em;margin-bottom:24px}
 .hero h1 em{font-style:normal;color:var(--amber)}
 .hero p.lead{font-size:1.15rem;color:var(--mut);max-width:520px;margin-bottom:34px}
@@ -61,6 +62,7 @@ section{padding:104px 0}
 .promise p{color:var(--mut);font-size:.94rem}
 /* story */
 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.story .ph{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;margin-bottom:28px;border:1px solid var(--line)}
 .story blockquote{font:700 clamp(1.5rem,2.8vw,2.2rem)/1.25 "Archivo",sans-serif;text-wrap:balance}
 .story cite{display:block;margin-top:22px;font:500 .95rem "Public Sans",sans-serif;color:var(--mut);font-style:normal}
 .steps{list-style:none;display:grid;gap:26px}
@@ -81,13 +83,13 @@ section{padding:104px 0}
 .card .tel{display:block;font:900 1.8rem "Archivo",sans-serif;margin:10px 0 22px}
 footer{padding:36px 0;border-top:1px solid var(--line);color:#7d8591;font-size:.88rem}
 @media (max-width:900px){
-  .hero .wrap,.story .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+  .story .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
   .promise .wrap{grid-template-columns:1fr 1fr}
   .svc li{grid-template-columns:44px 1fr;gap:6px 16px;padding-block:22px}
   .svc li p{grid-column:2}.svc .pr{grid-column:2}
   .top nav a:not(.btn){display:none}
   section{padding:72px 0}.hero{padding:56px 0 64px}
-  .gauge{width:min(300px,100%)}
+  .hero{background:linear-gradient(180deg,rgba(14,16,19,.55),#0e1013 92%),url(../photos/garage-hero.jpg) 70% top/cover no-repeat,#0e1013}
 }
 @media (max-width:520px){.promise .wrap{grid-template-columns:1fr}}
 </style>
@@ -119,20 +121,6 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:#7d8591;font-size:.
     </div>
     <div class="trust rv"><span>Devis avant travaux</span><span>Garantie 12 mois</span><span>Voiture de courtoisie</span></div>
   </div>
-  <svg class="gauge rv" viewBox="0 0 400 400" role="img" aria-label="Compte-tours">
-    <defs><radialGradient id="gb" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1b2028"/><stop offset="1" stop-color="#101318"/></radialGradient></defs>
-    <circle cx="200" cy="200" r="190" fill="url(#gb)" stroke="#2a313b" stroke-width="2"/>
-    <circle cx="200" cy="200" r="168" fill="none" stroke="#262c35" stroke-width="1"/>
-    <path d="M70 290 A 150 150 0 1 1 330 290" fill="none" stroke="#2f3742" stroke-width="10" stroke-linecap="round"/>
-    <g stroke="#6b7482" stroke-width="3" stroke-linecap="round">
-      <path d="M200 52v16" transform="rotate(-120 200 200)"/><path d="M200 52v16" transform="rotate(-90 200 200)"/><path d="M200 52v16" transform="rotate(-60 200 200)"/><path d="M200 52v16" transform="rotate(-30 200 200)"/><path d="M200 52v16"/><path d="M200 52v16" transform="rotate(30 200 200)"/><path d="M200 52v16" transform="rotate(60 200 200)"/><path d="M200 52v16" transform="rotate(90 200 200)"/><path d="M200 52v16" transform="rotate(120 200 200)"/>
-    </g>
-    <g stroke="#ff4a3d" stroke-width="5" stroke-linecap="round"><path d="M200 52v18" transform="rotate(90 200 200)"/><path d="M200 52v18" transform="rotate(120 200 200)"/></g>
-    <g class="needle"><path d="M200 200 L196 70 L200 58 L204 70Z" fill="#ffb020"/></g>
-    <circle cx="200" cy="200" r="16" fill="#0e1013" stroke="#ffb020" stroke-width="3"/>
-    <text x="200" y="262" text-anchor="middle" fill="#f3efe8" font-family="Archivo" font-weight="900" font-size="30" letter-spacing="2">DELCOURT</text>
-    <text x="200" y="286" text-anchor="middle" fill="#a9b0bb" font-family="Public Sans" font-size="13" letter-spacing="4">CHARLEROI</text>
-  </svg>
 </div></section>
 
 <section id="services"><div class="wrap">
@@ -156,7 +144,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:#7d8591;font-size:.
 </div></section>
 
 <section id="methode" class="story"><div class="wrap">
-  <figure class="rv"><blockquote>« Pour la première fois, un garagiste m'a montré la pièce usée et m'a dit de ne pas la changer tout de suite. »</blockquote><cite>Sophie, cliente depuis 2019 · exemple d'avis</cite></figure>
+  <figure class="rv"><img class="ph" src="../photos/garage-diag.jpg" alt="Diagnostic électronique d'un moteur" loading="lazy"><blockquote>« Pour la première fois, un garagiste m'a montré la pièce usée et m'a dit de ne pas la changer tout de suite. »</blockquote><cite>Sophie, cliente depuis 2019 · exemple d'avis</cite></figure>
   <ol class="steps">
     <li class="rv"><b>1</b><div><h3>Vous appelez ou réservez en ligne</h3><p>Un créneau en deux minutes, y compris le samedi matin.</p></div></li>
     <li class="rv"><b>2</b><div><h3>On examine, on vous montre</h3><p>Photos et explications simples, avec le devis avant tout travail.</p></div></li>
