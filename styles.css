@@ -483,3 +483,10 @@ html[dir="rtl"] .show-next { right: auto; left: 28px; }
 .hero { padding: 64px 0 72px; }
 #demos.page-demos { padding-block: 72px; }
 @media (max-width: 900px) { .hero { padding: 40px 0 48px; } #demos.page-demos { padding-block: 52px; } }
+
+/* homepage: the demo slideshow is the first thing under the header */
+.demos-top { padding: 20px 0 36px !important; background: #fff; }
+.demos-top .section-head { display: none; }
+.demos-top .show-stage { height: clamp(480px, calc(100vh - 190px), 720px); }
+.hero { padding-top: 56px; }
+@media (max-width: 900px) { .demos-top { padding: 12px 0 28px !important; } .demos-top .show-stage { height: min(640px, calc(100svh - 150px)); } }
